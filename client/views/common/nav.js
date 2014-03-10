@@ -47,6 +47,18 @@ Template.nav.rendered=function(){
   }
 };
 
+Template.nav.viewProfile=function(){
+  return "/"+baseUrl+'/users/'+Meteor.user().slug;
+}
+
+Template.nav.editProfile=function(){
+  return '/'+baseUrl+'/account';
+}
+
+Template.nav.loggedInname=function(){
+  return Meteor.user();
+}
+
 Template.nav.events({
   'click #logout': function(e){
     e.preventDefault();

@@ -1,4 +1,4 @@
-<template name="nav">
+<template name="nav-old">
   <header class="header grid">
 
     <a id="mobile-menu" href="#menu" class="mobile mobile-button menu"><i class="icon-menu"></i><span>{{i18n "Menu"}}</span></a>
@@ -65,9 +65,89 @@
     </ul>
     {{/if}}
 
-    <div class="auth-buttons">
-      {{loginButtons align="right"}}
-    </div>
+    <!--<div class="auth-buttons">-->
+      <!--{{loginButtons align="right"}}-->
+    <!--</div>-->
 
   </header>
 </template>
+
+<template name="nav">
+    <div class="container" >
+        <nav class="navbar navbar-default" role="navigation" >
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Cybit QA</a>
+            </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "View"}} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="top" href="/{{baseUrl}}/top">{{i18n "Top"}}</a></li>
+                        <li><a class="new" href="/{{baseUrl}}/new">{{i18n "New"}}</a></li>
+                        <li><a class="best" href="/{{baseUrl}}/best">{{i18n "Best"}}</a></li>
+                        <li><a class="digest" href="/{{baseUrl}}/digest">{{i18n "Digest"}}</a></li>
+                    </ul>
+                </li>
+
+                {{#if hasCategories}}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Categories"}}<b class="caret"></b></a>
+                        <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
+                            {{# each categories}}
+                            <li><a class="pending" href="{{categoryLink}}">{{name}}</a></li>
+                            {{/each}}
+                        </ul>
+                </li>
+                {{/if}}
+
+                {{#if isAdmin}}
+                <li class="dropdown">
+                    <a class="admin" href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Administration"}}<b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu"aria-labelledby="dLabel">
+                        <li><a class="pending" href="/{{baseUrl}}/pending">{{i18n "Pending"}}</a></li>
+                        <li><a class="users" href="/{{baseUrl}}/all-users">{{i18n "Users"}}</a></li>
+                        <li><a class="settings" href="/{{baseUrl}}/settings">{{i18n "Settings"}}</a></li>
+                        <li><a class="categories" href="/{{baseUrl}}/categories">{{i18n "Categories"}}</a></li>
+                        <li><a class="logs" href="/{{baseUrl}}/logs">{{i18n "Logs"}}</a></li>
+                        <li><a class="categories" href="/{{baseUrl}}/toolbox">{{i18n "Toolbox"}}</a></li>
+                    </ul>
+                </li>
+                {{/if}}
+                <li>
+                 {{> search}}
+                </li>
+
+
+                </ul>
+            <ul class="nav navbar-nav navbar-right ">
+                <li class=" navbar-text navbar-right ">Sign In as {{loggedInname}}</li>
+                <li class="dropdown navbar-right">
+                    <a class="admin" href="#" class="dropdown-toggle " data-toggle="dropdown">Profile<b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu"aria-labelledby="dLabel">
+                        <li> <a href={{viewProfile}} class="account-link button">View Profile</a></li>
+                        <li><a href={{editProfile}} class="account-link button">Edit Account</a></li>
+                        <li><a class="pending" href="/{{baseUrl}}/pending">Sign Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            </div><!-- /.navbar-collapse -->
+
+    </nav>
+    </div>
+</template>
+
+
+

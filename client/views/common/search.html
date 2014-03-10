@@ -1,5 +1,13 @@
-<template name="search">
+<template name="search-old">
   <div class="search {{searchQueryEmpty}}">
     <input id="search" type="search" class="search-field" placeholder="search" value="{{searchQuery}}">
   </div>
+</template>
+
+<template name="search">
+    <form class="search navbar-form" role="search">
+        <div class="form-group search">
+            <input type="text" class="form-control search-field" placeholder="Search">
+        </div>
+    </form>
 </template>
