@@ -1,12 +1,11 @@
 <template name="category_item">
-	<li>      
-		<form>
+		<form class="form-horizontal">
         <div class="form-group">
-          <span class="input-group-addon"><a class="button submit edit-link" href="#">Save</a></span>
-
-          <div class="controls"><input id="name_{{_id}}" type="text" class="form-control" value="{{name}}" /></div>
-          <span class="category-slug small">Slug: /{{slug}}</span>
+          <div class="input-group">
+              <input id="name_{{_id}}" type="text" class="form-control" value="{{name}}" />
+              <span class="input-group-addon"><a class="button submit edit-link" href="#">Save</a></span>
+          </div>
+            <span class="category-slug small">Slug: /{{slug}}</span>
         </div>
       </form>
-  </li>
 </template>

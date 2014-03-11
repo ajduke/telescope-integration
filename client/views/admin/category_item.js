@@ -14,5 +14,8 @@ Template.category_item.events({
         throwError(error.reason);
       }
     });
-  }
+  },
+    'click input[type="text"]': function(e, instance){
+        e.preventDefault();
+    }
 })
