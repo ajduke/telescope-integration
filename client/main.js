@@ -22,5 +22,7 @@ Deps.autorun(function() {
       // Subscribe to all users for now to make user selection autocomplete work
       Meteor.subscribe('allUsersAdmin');
     }
+  }else{
+//    Router.go('/forum/login');
   }
 });

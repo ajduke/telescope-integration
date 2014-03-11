@@ -1,4 +1,36 @@
 <template name="categories">
+  <div class="row">
+
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <fieldset class="well">
+      <h2 class="text-center">Manage Categories</h2>
+
+      <form class="form-horizontal">
+        <fieldset class="well">
+        <h3 class="text-center">Add new category</h3>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Name</label>
+          <div class="col-sm-9 ">
+            <input id="name" type="text" class="form-control" value="" />
+          </div>
+        </div>
+
+        <input type="submit" class="btn btn-default form-control"   value="Submit" />
+        </fieldset>
+      </form>
+      <ul>
+        {{#each categories}}
+        {{> category_item}}
+        {{/each}}
+      </ul>
+
+      </fieldset>
+    </div>
+
+    <div class="col-sm-4"></div>
+  </div>
+
   <div class="grid-small grid-block dialog admin">
     <h2>Categories</h2>
     <form class="form-block">

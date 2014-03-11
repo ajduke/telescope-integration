@@ -25,7 +25,7 @@ Template.post_submit.rendered = function(){
     $('#submitted_hidden').val(moment(ev.date).valueOf());
   });
 
-  $("#postUser").selectToAutocomplete();
+  $(".postUser").selectToAutocomplete();
 
 }
 
@@ -47,7 +47,7 @@ Template.post_submit.events({
     var categories=[];
     var sticky=!!$('#sticky').attr('checked');
     var submitted = $('#submitted_hidden').val();
-    var userId = $('#postUser').val();
+    var userId = $('.postUser').val();
     var status = parseInt($('input[name=status]:checked').val());
 
     $('input[name=category]:checked').each(function() {
@@ -87,18 +87,20 @@ Template.post_submit.events({
   'click .get-title-link': function(e){
     e.preventDefault();
     var url=$("#url").val();
+    $('#title').attr('placeholder','please wait while loading title ...');
     $(".get-title-link").addClass("loading");
     if(url){
       $.get(url, function(response){
           if ((suggestedTitle=((/<title>(.*?)<\/title>/m).exec(response.responseText))) != null){
               $("#title").val(suggestedTitle[1]);
+            $('#title').attr('placeholder','');
           }else{
-              alert("Sorry, couldn't find a title...");
+            $('#title').attr('placeholder','Sorry, couldnt find a title...');
           }
           $(".get-title-link").removeClass("loading");
        });
     }else{
-      alert("Please fill in an URL first!");
+      $('#title').attr('placeholder','Please fill in an URL first!');
       $(".get-title-link").removeClass("loading");
     }
   }

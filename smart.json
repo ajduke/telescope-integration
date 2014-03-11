@@ -11,6 +11,7 @@
     "nprogress": {},
     "fast-render": {},
     "spin": {},
-    "bootstrap-3": {}
+    "bootstrap-3": {},
+    "fontawesome4": {}
   }
 }

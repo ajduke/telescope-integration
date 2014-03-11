@@ -55,14 +55,20 @@ Template.nav.editProfile=function(){
   return '/'+baseUrl+'/account';
 }
 
-Template.nav.loggedInname=function(){
-  return Meteor.user();
+Template.nav.loggedInUserName=function(){
+  return Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
 }
 
 Template.nav.events({
   'click #logout': function(e){
     e.preventDefault();
     Meteor.logout();
+  },
+  'click .signout': function(e){
+    console.log('sign out called')
+    e.preventDefault();
+    Meteor.logout();
+    Router.go('/forum/login');
   },
   'click #mobile-menu': function(e){
     e.preventDefault();

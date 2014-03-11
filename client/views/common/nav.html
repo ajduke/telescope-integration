@@ -131,17 +131,24 @@
 
 
                 </ul>
-            <ul class="nav navbar-nav navbar-right ">
-                <li class=" navbar-text navbar-right ">Sign In as {{loggedInname}}</li>
+              {{#if currentUser}}
+              <ul class="nav navbar-nav navbar-right ">
+                <li> <a id="submit" class="btn btn-link btn-info" href="/{{baseUrl}}/submit">New Post</a></li>
                 <li class="dropdown navbar-right">
-                    <a class="admin" href="#" class="dropdown-toggle " data-toggle="dropdown">Profile<b class="caret"></b></a>
+                    <a class="admin" href="#" class="dropdown-toggle " data-toggle="dropdown">Sign In as <b>{{loggedInUserName}}</b><b class="caret"></b></a>
                     <ul role="menu" class="dropdown-menu"aria-labelledby="dLabel">
                         <li> <a href={{viewProfile}} class="account-link button">View Profile</a></li>
                         <li><a href={{editProfile}} class="account-link button">Edit Account</a></li>
-                        <li><a class="pending" href="/{{baseUrl}}/pending">Sign Out</a></li>
+                        <li><a class="signout" href="#">Sign Out</a></li>
                     </ul>
                 </li>
-            </ul>
+              </ul>
+              {{else}}
+
+              <ul class="nav navbar-nav navbar-right ">
+              <li> <a href="/{{baseUrl}}/login">Login to Post</a></li>
+              </ul>
+              {{/if}}
 
             </div><!-- /.navbar-collapse -->
 
