@@ -1633,17 +1633,17 @@ form .note, .accounts-dialog .note {
     border-radius: 30px; }
 
 /* line 40, ../sass/modules/_users.scss */
-table {
-  width: 100%; }
+/*table {*/
+  /*width: 100%; }*/
   /* line 42, ../sass/modules/_users.scss */
-  table tr {
-    border-bottom: 1px solid #eee; }
+  /*table tr {*/
+    /*border-bottom: 1px solid #eee; }*/
     /* line 44, ../sass/modules/_users.scss */
-    table tr td, table tr th {
-      padding: 10px; }
+    /*table tr td, table tr th {*/
+      /*padding: 10px; }*/
   /* line 50, ../sass/modules/_users.scss */
-  table thead tr td, table thead tr th {
-    font-weight: bold; }
+  /*table thead tr td, table thead tr th {*/
+    /*font-weight: bold; }*/
 
 /* line 63, ../sass/modules/_users.scss */
 .search-date-header {

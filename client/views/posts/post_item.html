@@ -1,4 +1,54 @@
 <template name="post_item">
+  {{#with post}}
+  <div class="alert-warning">
+    <div class="row">
+      <div class="col-sm-10 col-md-10">
+        <div class="panel panel-default" style="background-color: #ffffff">
+          <div class="panel-body">
+          {{#if sticky}}
+          <span class="post-sticky"><i class="icon-pin"></i><span>{{i18n "Sticky"}}</span></span>
+          {{/if}}
+          <h3 class="">
+            <a href="{{postLink}}" class="" target="{{postTarget}}">{{headline}}</a>
+            <small>
+            {{#if url}}<span class="btn btn-link small">{{domain}}</span>{{/if}}
+            {{#each categories}}
+            <a href="{{categoryLink}}" class="btn btn-default small category-{{slug}}">{{name}}</a>
+            {{/each}}
+            </small>
+          </h3>
+          <p class="post-meta"><span class="points">{{votes}} <span class="unit">{{pointsUnitDisplayText}} </span></span>by  <a class="post-author" href="{{profileUrl}}">{{authorName}}</a> <span class="post-time">{{ago}}</span><span class="comments">, <a class="go-to-comments" href="/{{baseUrl}}/posts/{{_id}}">{{comments}} {{commentsDisplayText}}</a></span>
+            {{#if can_edit}}
+            | <a href="/{{baseUrl}}/posts/{{_id}}/edit" class="edit-link goto-edit">Edit</a>
+            {{/if}}
+            {{#if currentUser.isAdmin}}
+            | {{i18n "status"}}: {{status}}</span>, {{i18n "votes"}}: {{votes}}, {{i18n "baseScore"}}: {{baseScore}}, {{i18n "score"}}: {{short_score}}, {{i18n "clicks"}}: {{clicks}}
+            {{/if}}
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1 col-md-1">
+       <div class="panel panel-default">
+         <div class="panel-body">
+           Share
+         </div>
+
+       </div>
+      </div>
+      <div class="col-sm-1 col-md-1">
+        <div class="well well-lg">
+        Discuss
+         </div>
+      </div>
+
+    </div>
+
+  </div>
+  {{/with}}
+
+
+
   {{# with post}}
   <div class="post post-{{rank}} {{#if sticky}}sticky{{/if}} {{inactiveClass}}" id="{{_id}}">
     <ul class="post-actions">

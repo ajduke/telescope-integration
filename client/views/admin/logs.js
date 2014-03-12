@@ -23,6 +23,6 @@ Template.logs.helpers({
   },
   loadMoreUrl: function(){
     var count = parseInt(Session.get('logsLimit')) + 100;
-    return '/logs/' + count;
+    return '/'+baseUrl+'/logs/' + count;
   },  
 });

@@ -1,48 +1,85 @@
 <template name="users">
-    <div class="grid">
-      <div class="user-table grid-block">
-        <h2>{{i18n "Users"}}</h2>
-        <div class="filter-sort">
-          <p class="filter">
-            <span>{{i18n "Filter by"}}: </span>
-            <a class="{{activeClass 'all'}}" href="{{filterBy 'all'}}">{{i18n "All"}}</a>
-            <a class="{{activeClass 'invited'}}" href="{{filterBy 'invited'}}">{{i18n "Invited"}}</a>
-            <a class="{{activeClass 'uninvited'}}" href="{{filterBy 'uninvited'}}">{{i18n "Uninvited"}}</a>
-            <a class="{{activeClass 'admin'}}" href="{{filterBy 'admin'}}">{{i18n "Admin"}}</a>
-          </p>
-          <p class="sort">
-            <span>{{i18n "Sort by"}}: </span>
-            <a class="{{activeClass 'createdAt'}}" href="{{sortBy 'createdAt'}}">{{i18n "Created"}}</a>
-            <a class="{{activeClass 'karma'}}" href="{{sortBy 'karma'}}">{{i18n "Karma"}}</a>
-            <a class="{{activeClass 'username'}}" href="{{sortBy 'username'}}">{{i18n "Username"}}</a>
-            <a class="{{activeClass 'postCount'}}" href="{{sortBy 'postCount'}}">{{i18n "Posts"}}</a>
-            <a class="{{activeClass 'commentCount'}}" href="{{sortBy 'commentCount'}}">{{i18n "Comments"}}</a>
-            <a class="{{activeClass 'invitedCount'}}" href="{{sortBy 'invitedCount'}}">{{i18n "InvitedCount"}}</a>
-          </p>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <td colspan="2">{{i18n "Name"}}</td>
-              <td>{{i18n "Member since"}}</td>
-              <td>{{i18n "Posts"}}</td>
-              <td>{{i18n "Comments"}}</td>
-              <td>{{i18n "Karma"}}</td>
-              <td>{{i18n "Invites"}}</td>
-              <td>{{i18n "Invited?"}}</td>
-              <td>{{i18n "Admin?"}}</td>
-              <td>{{i18n "Actions"}}</td>
-            </tr>
-          </thead>
-          <tbody>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <!--main content area-->
+
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">
+            <h3>{{i18n "Users"}}</h3>
+            </div>
+          <div class="panel-body">
+            <div class="well">
+              <div class="btn-toolbar">
+                <div class="btn-group">
+                  <a class="btn btn-default disabled"  href="#">
+                    <span class="glyphicon glyphicon-filter"></span>
+                  </a>
+                  <a class="btn btn-default {{activeClass 'all'}}" href="{{filterBy 'all'}}">{{i18n "All"}}</a>
+                  <a class="btn btn-default {{activeClass 'invited'}}" href="{{filterBy 'invited'}}">{{i18n
+                    "Invited"}}</a>
+                  <a class="btn btn-default {{activeClass 'uninvited'}}" href="{{filterBy 'uninvited'}}">{{i18n
+                    "Uninvited"}}</a>
+                  <a class="btn btn-default {{activeClass 'admin'}}" href="{{filterBy 'admin'}}">{{i18n "Admin"}}</a>
+                </div>
+
+                <div class="btn-group pull-right">
+                  <a class="btn btn-default disabled" href="#">
+                    <span class="glyphicon glyphicon-sort"></span>
+                  </a>
+                  <a class="btn btn-default {{activeClass 'createdAt'}}" href="{{sortBy 'createdAt'}}">{{i18n
+                    "Created"}}</a>
+                  <a class="btn btn-default {{activeClass 'karma'}}" href="{{sortBy 'karma'}}">{{i18n "Karma"}}</a>
+                  <a class="btn btn-default {{activeClass 'username'}}" href="{{sortBy 'username'}}">{{i18n
+                    "Username"}}</a>
+                  <a class="btn btn-default {{activeClass 'postCount'}}" href="{{sortBy 'postCount'}}">{{i18n
+                    "Posts"}}</a>
+                  <a class="btn btn-default {{activeClass 'commentCount'}}" href="{{sortBy 'commentCount'}}">{{i18n
+                    "Comments"}}</a>
+                  <a class="btn btn-default {{activeClass 'invitedCount'}}" href="{{sortBy 'invitedCount'}}">{{i18n
+                    "InvitedCount"}}</a>
+                </div>
+              </div>
+            </div>
+
+
+            {{#if users}}
+            <table class="table">
+              <thead>
+              <tr>
+                <td colspan="2">{{i18n "Name"}}</td>
+                <td>{{i18n "Member since"}}</td>
+                <td>{{i18n "Posts"}}</td>
+                <td>{{i18n "Comments"}}</td>
+                <td>{{i18n "Karma"}}</td>
+                <td>{{i18n "Invites"}}</td>
+                <td>{{i18n "Invited?"}}</td>
+                <td>{{i18n "Admin?"}}</td>
+                <td>{{i18n "Actions"}}</td>
+              </tr>
+              </thead>
+              <tbody>
               {{#each users}}
-                {{> user_item}}
+              {{> user_item}}
               {{/each}}
-          </tbody>
-        </table>
-        <div class="grid more-button {{#if allPostsLoaded}} hidden {{/if}}">
-          <a class="more-link" href="{{loadMoreUrl}}">{{i18n "Load more"}}</a>
-        </div>
+
+              </tbody>
+            </table>
+
+            <div class="text-center">
+              <a class="btn btn-lg btn-default " href="{{loadMoreUrl}}">{{i18n "Load more"}}</a>
+            </div>
+            {{else}}
+            No users Info to show
+            {{/if}}
+
+          </div> <!-- End of panel body-->
+        </div> <!-- End of panel-->
       </div>
+      <div class="col-md-1"></div>
     </div>
+  </div>
+  </div>
 </template>
