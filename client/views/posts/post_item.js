@@ -132,5 +132,8 @@ Template.post_item.events({
     $this.toggleClass("active");
     $share.toggleClass("hidden");
     $share.find('.share-replace').sharrre(SharrreOptions);
+  },
+  'click .goto-post':function(e){
+   Router.go('/'+baseUrl +'/posts/'+this._id)
   }
 });
