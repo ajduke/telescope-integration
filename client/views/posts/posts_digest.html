@@ -1,5 +1,5 @@
 <template name="posts_digest">
-  <div class="grid">
+  <div class="container">
     <div class="grid-block">
       {{i18n "The top 5 posts of each day."}} |
     {{#if showPreviousDate}}
@@ -12,13 +12,13 @@
     </div>
   </div>
   {{#if hasPosts}}
-    <div class="posts grid list">
+    <div class="container">
       {{#each posts}}
         {{> post_item}}
       {{/each}}
     </div>
   {{else}}
-    <div class="grid-small grid-block dialog">
+    <div class="grid grid-block dialog">
       <p>{{i18n "Sorry, no posts for today"}}.</p>
     </div>
   {{/if}}

@@ -1,6 +1,8 @@
 Template.comment_form.rendered = function(){
+  console.log('rendeding ')
   if(Meteor.user() && !this.editor){
     this.editor = new EpicEditor(EpicEditorOptions).load();
+    console.log('edipc editor loaded')
     $(this.editor.editor).bind('keydown', 'meta+return', function(){
       $(window.editor).closest('form').find('input[type="submit"]').click();
     });
@@ -12,7 +14,8 @@ Template.comment_form.events({
     e.preventDefault();
     $(e.target).addClass('disabled');
     clearSeenErrors();
-    var content = instance.editor.exportFile();
+//    var content = instance.editor.exportFile();
+    var content = $('.editor').val()
     if(getCurrentTemplate() == 'comment_reply'){
       // child comment
       var parentComment = this.comment;
@@ -22,8 +25,9 @@ Template.comment_form.events({
           console.log(error);
           throwError(error.reason);
         }else{
+          $('.editor').val(' ')
           trackEvent("newComment", commentProperties);
-          Router.go('/posts/'+parentComment.post+'/comment/'+commentProperties.commentId);
+          Router.go('/'+baseUrl+'/posts/'+parentComment.post+'/comment/'+commentProperties.commentId);
         }
       });
     }else{
@@ -38,9 +42,11 @@ Template.comment_form.events({
         }else{
           trackEvent("newComment", commentProperties);
           Session.set('scrollToCommentId', commentProperties.commentId);
-          instance.editor.importFile('editor', '');
+//          instance.editor.importFile('editor', '');
+
         }
       });
+      $('.editor').val(' ')
     }
   }
 });

@@ -1,0 +1,25 @@
+.post-upvote-alt
+{
+    color:#5e5e5e;
+    padding: 20px;
+    border-right : thin inset #5e5e5e;
+    height: 69px;
+}
+
+
+.glyphicon-lg{font-size:1.5em}
+.glyphicon-sm{font-size:1.4em;;color:#a4a9ab;padding-top: 9px}
+.sh-square{width:35px;height:80px;margin-right:22px;text-align:center!important;background-color:#E6E6E6;padding:20px 0}
+.blockquote-box{margin-bottom:4px}
+.tp-padding{margin-top: 11px}
+.blockquote-box .square{width:60px;min-height:35px;margin-right:22px;text-align:center!important;background-color:#E6E6E6;padding:8px 0}
+.blockquote-box.blockquote-primary{border-color:#357EBD}
+.blockquote-box.blockquote-primary .square{background-color:#e7e7e7;color:#a4a9ab}
+.blockquote-box.blockquote-success{border-color:#4CAE4C}
+.blockquote-box.blockquote-success .square{background-color:#5CB85C;color:#FFF}
+.blockquote-box.blockquote-info{border-color:#46B8DA}
+.blockquote-box.blockquote-info .square{background-color:#5BC0DE;color:#FFF}
+.blockquote-box.blockquote-warning{border-color:#EEA236}
+.blockquote-box.blockquote-warning .square{background-color:#F0AD4E;color:#FFF}
+.blockquote-box.blockquote-danger{border-color:#D43F3A}
+.blockquote-box.blockquote-danger .square{background-color:#D9534F;color:#FFF}

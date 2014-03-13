@@ -112,7 +112,7 @@ Template.post_item.rendered = function(){
 };
 
 Template.post_item.events({
-  'click .upvote-link': function(e, instance){
+  'click .upvote-lnk': function(e, instance){
     var post = this;
     e.preventDefault();
     if(!Meteor.user()){

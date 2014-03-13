@@ -3,11 +3,14 @@
     <form>
       {{#constant}}
       <div class="comment-field" id="editor">
-        <textarea id="comment" rows="3" autofocus="autofocus"></textarea>
+        <textarea class="form-control editor"   id="comment" rows="3" autofocus="autofocus"></textarea>
       </div>
       {{/constant}}
-      <div class="comment-submit">
-        <input type="submit" class="button" value="{{i18n "Add Comment"}}" title="(⌘+enter)" />
+      <div class="row">
+        <div class="col-md-2">
+          <input type="submit" class="form-control" value="{{i18n "Add Comment"}}" title="(⌘+enter)" />
+        </div>
+        <div class="col-md-10"></div>
       </div>
     </form>
   </div>

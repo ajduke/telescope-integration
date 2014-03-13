@@ -1,63 +1,66 @@
 <template name="post_item">
   {{#with post}}
-        <!--add for sticky post color for and note icon-->
-        <div class="panel" style="background-color: #ffffff">
-
-
-            <!--panel body starts -->
-            <div class="row">
-              <div class="col-md-1">
-                <div class="btn btn-default btn-lg post-upvote">
-                  {{#if voted}}
-                  <span class="upvote-link voted"><i class="icon-check"></i><span></span></span>
-                  {{else}}
-                  <a class="upvote-link not-voted" href="#"><i class="icon-up"></i><span></span></a>
-                  {{/if}}
-                </div>
-              </div>
-
-              <div class="col-md-9 ">
-                <h4 class="">
-                  <a href="{{postLink}}" class="" target="{{postTarget}}">{{headline}}</a>
-                  <small>
-                    {{#if url}}<span >{{domain}}</span>{{/if}}
-                    {{#each categories}}
-                    <a href="{{categoryLink}}" class="btn btn-default btn-xs category-{{slug}}">{{name}}</a>
-                    {{/each}}
-                  </small>
-                </h4>
-
-                <p class="small"><span class="points">{{votes}} <span
-                  class="unit">{{pointsUnitDisplayText}} </span></span>by <a class="post-author" href="{{profileUrl}}">{{authorName}}</a>
-                  <span class="post-time">{{ago}}</span><span class="comments">, <a class="go-to-comments"
-                                                                                    href="/{{baseUrl}}/posts/{{_id}}">{{comments}}
-                    {{commentsDisplayText}}</a></span>
-                  {{#if can_edit}}
-                  | <a href="/{{baseUrl}}/posts/{{_id}}/edit" class="edit-link goto-edit">Edit</a>
-                  {{/if}}
-                </p>
-              </div>
-              <div class="col-md-1">
-                <span class="post-share" style="padding: 7px">
-                  <a class=" btn btn-default share-link" style="font-size: 2.8em"> <span class="glyphicon glyphicon-share-alt"></span> </a>
-                  <div class="share-options hidden">
-                    <div data-url="{{#if url}}{{outgoingUrl}}{{else}}{{current_domain}}/{{baseUrl}}/posts/{{_id}}{{/if}}"
-                         data-text="{{headline}}" class="share-replace">
-                    </div>
-                  </div>
-                </span>
-
-              </div>
-              <div class="col-md-1">
-                <a class="btn btn-default goto-post" style="font-size: 2.8em"> <span class="glyphicon glyphicon-arrow-right "></span></a>
-              </div>
-            </div>
-
-            <!--panel body ends-->
+  <!--add for sticky post color for and note icon-->
+  <div class="panel" style="padding: 5px;margin-bottom: 5px;">
+    <!--panel body starts -->
+    <div class="row">
+      <div class="col-md-9 ">
+        <div class="blockquote-box blockquote-primary clearfix">
+          <div class="sh-square pull-left">
+            {{#if voted}}
+            <span class="glyphicon glyphicon-ok glyphicon-sm"></span>
+            {{else}}
+            <a class="upvote-lnk glyphicon glyphicon-chevron-up glyphicon-sm" href="#"><span></span></a>
+            {{/if}}
+          </div>
+          <h4>
+            <a href="{{postLink}}" class="" target="{{postTarget}}">{{headline}}</a>
+            <small>
+              {{#if url}}<span>{{domain}}</span>{{/if}}
+              {{#each categories}}
+              <a href="{{categoryLink}}" class="btn btn-default btn-xs category-{{slug}}">{{name}}</a>
+              {{/each}}
+            </small>
+          </h4>
+          <p class="small">
+                    <span class="points">{{votes}} <span
+                      class="unit">{{pointsUnitDisplayText}} </span></span>by <a class="post-author"
+                                                                                 href="{{profileUrl}}">{{authorName}}</a>
+            <span class="post-time">{{ago}}</span><span class="comments">, <a class="go-to-comments"
+                                                                              href="/{{baseUrl}}/posts/{{_id}}">{{comments}}
+            {{commentsDisplayText}}</a></span>
+            {{#if can_edit}}
+            | <a href="/{{baseUrl}}/posts/{{_id}}/edit" class="edit-link goto-edit">Edit</a>
+            {{/if}}
+          </p>
         </div>
 
-  {{/with}}
+      </div>
+      <div class="col-md-3">
+        <div class="post-share btn-group tp-padding pull-right blockquote-box blockquote-primary clearfix">
+          <a href="#" class="share-link square pull-left">
+            <span class="glyphicon glyphicon-share-alt glyphicon-lg"></span>
+            Share
+          </a>
+          <div class="share-options hidden">
+            <div data-url="{{#if url}}{{outgoingUrl}}{{else}}{{current_domain}}/{{baseUrl}}/posts/{{_id}}{{/if}}"
+                 data-text="{{headline}}" class="share-replace">
+            </div>
+          </div>
+          <a href="/{{baseUrl}}/posts/{{_id}}" class="square pull-right">
+            <span class="glyphicon glyphicon-arrow-right glyphicon-lg"></span>
+            Dicuss
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--{{#if body}}-->
+  <!--<div class="post-message markdown">{{{body_formatted}}}</div>-->
+  <!--{{/if}}-->
+  <!--panel body ends-->
 
+  {{/with}}
 
 
 </template>
