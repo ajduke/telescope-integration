@@ -1,14 +1,22 @@
 <template name="notifications">
 	{{#if currentUser}}
 		{{#if canPost}}
-		<div class="notifications desktop">
-			<a href="#" class="notifications-toggle {{notification_class}}">{{notification_count}}</a>
+		<div class="notifications notifications-open">
+			<a href="#" class="notifications-toggle {{notification_class}}">
+        {{#if notification_count}}
+        <span class="glyphicon glyphicon-tasks" style="font-size: 1.8em"></span>
+
+        {{else}}
+        <span class="glyphicon glyphicon-tasks" style="font-size: 1.8em"> </span>
+        {{/if}}
+
+			</a>
 			<a href="#" class="mark-as-read">{{i18n "Mark all as read"}}</a>
-			<ul>
+      <div style="height: 100%;overflow: auto;">
 			{{#each notifications}}
 				{{> notification_item}}
 		    {{/each}}
-			</ul>
+      </div>
 		</div>
 		{{/if}}
 	{{/if}}

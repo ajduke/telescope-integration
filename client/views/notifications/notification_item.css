@@ -1,0 +1,16 @@
+.notification-timestamp {
+    color: #b3c1c6;
+    font-size: 12px;
+}
+
+div.read{
+    color: #b3c1c6;
+    background: #f3f3f3;
+}
+
+div.notification-text{
+    padding: 10px;
+    border-bottom: 1px solid #dfdbdb;
+    font-size: 13px;
+    background: white;
+}

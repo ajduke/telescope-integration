@@ -25,6 +25,7 @@ Template.notification_item.events({
         console.log(error);
       } 
     }
-  );  
+  );
+    $('body').toggleClass('notifications-open');
   }
 });

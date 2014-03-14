@@ -1,0 +1,32 @@
+.userImg  {
+    margin: 10px 12px;
+}
+
+.votes{
+    margin: 5px 12px;
+    background-color: #E6E6E6;
+    color: #fff;
+    padding: 4px 4px;
+}
+
+.votes-lg{
+ font-size: 0.9em;
+}
+
+.comment-info{
+    margin: 10px 0;
+}
+.cmt-body{
+    padding: 8px 5px;
+}
+
+.comment-main{
+    margin-left: 55px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    -webkit-border-radius: 0 3px 3px 3px;
+    -moz-border-radius: 0 3px 3px 3px;
+    -ms-border-radius: 0 3px 3px 3px;
+    -o-border-radius: 0 3px 3px 3px;
+    border-radius: 0 3px 3px 3px;
+}
