@@ -4,14 +4,14 @@
     <div class="col-md-6">
       {{#with user}}
 
-      <fieldset class="well">
+      <fieldset class="well" style="background-color: #fff">
         {{#if profileIncomplete}}
         <div class="text-center bg-danger">
           {{i18n "Please complete your profile below before continuing."}}
         </div>
         {{/if}}
 
-        <h3> Edit Profile Details </h3>
+        <h3 style="color: #999"> Edit Profile Details </h3>
 
       <form class="form-horizontal" role="form">
 
@@ -66,7 +66,7 @@
           </div>
         </div>
 
-        <h3>{{i18n "Change Password?"}}</h3>
+        <h3 style="color: #999">{{i18n "Change Password?"}}</h3>
         <div class="form-group">
           <label class="col-sm-3 control-label">{{i18n "Old Password"}}</label>
           <div class="col-sm-9">
@@ -111,7 +111,7 @@
         {{#if isAdmin}}
         <h3>Invites</h3>
         <div class="form-group">
-          <label class="col-sm-3 control-label">Invites</label>
+          <label class="col-sm-3 control-label" style="color: #999">Invites</label>
           <div class="col-sm-9">
             <input name="inviteCount" class="form-control" type="text" value="{{inviteCount}}"/>
           </div>
@@ -120,14 +120,18 @@
 
 
         <div class="form-group">
-          <span class="col-sm-2"></span>
-          <span class="col-sm-10">
+          <span class="col-sm-3">
+            <div class="form-group">
+              <button class="btn btn-warning"  href="/{{baseUrl}}/forgot_password">{{i18n "Forgot password?"}}</button>
+            </div>
+          </span>
+
+          <span class="col-sm-5"></span>
+          <span class="col-sm-4">
             <input type="submit" class=" btn btn-default form-control" value="{{i18n " Submit"}}" />
           </span>
         </div>
-        <div class="form-group">
-          <a class="btn btn-link btn-info" href="/{{baseUrl}}/forgot_password">{{i18n "Forgot password?"}}</a>
-        </div>
+
 
       </form>
       </fieldset>

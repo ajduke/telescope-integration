@@ -1,4 +1,127 @@
 <template name="post_edit">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <!--main content area-->
+        {{#with post}}{{#constant}}
+        <fieldset class="well" style="background-color: white">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-3 control-label ">{{i18n "Created"}}</label>
+            <div class="col-sm-9"><p class="form-control-static">{{created}}</p></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "Title"}}</label>
+            <div class="col-sm-9"><input id="title" class="form-control" type="text" value="{{headline}}" /></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3  control-label ">{{i18n "URL"}}</label>
+            <div class="col-sm-9"><input id="url" class="form-control" type="text" value="{{url}}" /></div>
+          </div>
+          {{#if shorten}}
+          <div class="form-group">
+            <label class="col-sm-3  control-label">{{i18n "Short URL"}}</label>
+            <div class="col-sm-9"><input id="short-url" class="form-control" type="text" value="{{shortUrl}}" /></div>
+          </div>
+          {{/if}}
+          <div class="form-group">
+            <label class="col-sm-3 control-label ">{{i18n "Body"}}</label>
+            <div class="col-sm-9" id="editor"><textarea id="body" value=""  class="form-control" class="input-xlarge">{{body}}</textarea></div>
+          </div>
+          {{#if categoriesEnabled}}
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "Categories"}}</label>
+            <div class="col-sm-9">
+              {{#each categories}}
+              <label class="checkbox-inline">
+                <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" {{checked}} /> {{name}}
+              </label>
+              {{/each}}
+            </div>
+          </div>
+          {{/if}}
+          {{#if isAdmin}}
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "Inactive?"}}</label>
+            <div class="col-sm-9">
+              {{inactive}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "Sticky?"}}</label>
+            <div class="col-sm-9">
+              <input type="checkbox" name="sticky" id="sticky" {{isSticky}} />
+            </div>
+          </div>
+          {{#if isApproved}}
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "Submission Date"}}</label>
+            <div class="col-sm-9"><input id="submitted_date" class="form-control" type="text" value="{{submittedDate}}" /></div>
+            <input id="submitted_hidden" class="form-control" type="hidden" value="{{submitted}}" />
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "Submission Time"}}</label>
+            <div class="col-sm-9"><input id="submitted_time" class="form-control" type="text" value="{{submittedTime}}" /></div>
+          </div>
+          {{else}}
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "Submission"}}</label>
+            <div class="col-sm-9">
+              <p>{{i18n "Note: this post is still pending so it has no submission timestamp yet."}}</p>
+            </div>
+          </div>
+          {{/if}}
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "User"}}</label>
+            <div class="col-sm-9">
+              <select id="postUser" class="form-control">
+                {{#each users}}
+                <option {{isSelected}} value="{{_id}}">{{userName}}</option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">{{i18n "Status"}}</label>
+            <div class="col-sm-9">
+              <label class="radio-inline">
+                <input id="status_pending" type="radio" value="1" name="status" {{hasStatusPending}} /> {{i18n "Pending"}}
+              </label>
+              <label class="radio-inline">
+                <input id="status_approved" type="radio" value="2" name="status" {{hasStatusApproved}} /> {{i18n "Approved"}}
+              </label>
+              <label class="radio-inline">
+                <input id="status_rejected" type="radio" value="3" name="status" {{hasStatusRejected}} /> {{i18n "Rejected"}}
+              </label>
+            </div>
+          </div>
+          {{/if}}
+          <div class="form-group">
+            <span class="col-md-3"></span>
+            <span class="col-md-3">
+              <input type="submit" class="form-control" value="{{i18n "Submit"}}" />
+            </span>
+            <span class="col-md-3"></span>
+            <span class="col-md-3">
+              <button class="btn btn-danger delete-link" href="/{{baseUrl}}/posts/deleted">{{i18n "Delete Post"}}</button>
+            </span>
+
+
+          </div>
+        </form>
+
+        </fieldset>
+        {{/constant}}{{/with}}
+      </div>
+
+      <div class="col-md-2"></div>
+
+    </div><!-- end of row -->
+  </div>
+
+
+
   <div class="grid submit">
     {{#with post}}{{#constant}}
       <form class="grid-block form-horizontal">
