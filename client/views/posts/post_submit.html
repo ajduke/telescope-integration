@@ -1,12 +1,11 @@
 <template name="post_submit">
+  <div class="container">
   <div class="row">
-
-
     <div class="col-sm-2"></div>
 
     <div class="col-sm-8">
       {{#constant}}
-      <fieldset class="well">
+      <fieldset class="well" style="background-color: white">
 
         <div class="page-header">
         <h3 class="text-center text"> Enter the New Post Details</h3>
@@ -80,10 +79,10 @@
             <label class="radio-inline">
               <input id="status_pending" type="radio" value="1" name="status"/> {{i18n "Pending"}}
             </label>
-            <label class="radio">
+            <label class="radio-inline">
               <input id="status_approved" type="radio" value="2" name="status" checked /> {{i18n "Approved"}}
             </label>
-            <label class="radio">
+            <label class="radio-inline">
               <input id="status_rejected" type="radio" value="3" name="status"/> {{i18n "Rejected"}}
             </label>
           </div>
@@ -108,4 +107,5 @@
 
     <div class="col-sm-2"></div>
   </div>
+    </div>
 </template>

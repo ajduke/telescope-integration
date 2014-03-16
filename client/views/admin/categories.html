@@ -3,27 +3,36 @@
 
     <div class="col-sm-4 col-md-4"></div>
     <div class="col-sm-4 col-md-4">
-      <fieldset class="well">
-      <h2 class="text-center">Manage Categories</h2>
+      <fieldset class="well" style="background-color: #fff">
+        <h2 class="text-center">Manage Categories</h2>
 
-      <form class="form-horizontal">
+        <form class="form-horizontal">
+          <fieldset class="well">
+            <h3 class="text-center">Add new category</h3>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Name</label>
+
+              <div class="col-sm-9 ">
+                <input id="name" type="text" class="form-control" value=""/>
+              </div>
+            </div>
+            <div class="form-group">
+              <span class="col-sm-3"></span>
+             <span class="col-sm-3">
+               <input type="submit" class="btn btn-default form-control" value="Submit"/>
+             </span>
+              <span class="col-sm-6"></span>
+            </div>
+
+          </fieldset>
+        </form>
         <fieldset class="well">
-        <h3 class="text-center">Add new category</h3>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Name</label>
-          <div class="col-sm-9 ">
-            <input id="name" type="text" class="form-control" value="" />
-          </div>
-        </div>
-
-        <input type="submit" class="btn btn-default form-control"   value="Submit" />
+          {{#each categories}}
+          {{> category_item}}
+          {{/each}}
         </fieldset>
-      </form>
-      <ul>
-        {{#each categories}}
-        {{> category_item}}
-        {{/each}}
-      </ul>
+
 
       </fieldset>
     </div>

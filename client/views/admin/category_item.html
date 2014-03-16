@@ -1,11 +1,18 @@
 <template name="category_item">
-		<form class="form-horizontal">
+  <div>
+    <form class="form-horizontal">
+
         <div class="form-group">
-          <div class="input-group">
-              <input id="name_{{_id}}" type="text" class="form-control" value="{{name}}" />
-              <span class="input-group-addon"><a class="button submit edit-link" href="#">Save</a></span>
-          </div>
-            <span class="category-slug small">Slug: /{{slug}}</span>
+          <span class="col-sm-2"></span>
+        <span class="col-sm-8">
+        <div class="input-group">
+          <input id="name_{{_id}}" type="text" class="form-control" value="{{name}}"/>
+          <span class="input-group-addon"><a class="button submit edit-link" href="#">Save</a></span>
         </div>
-      </form>
+        <span class="category-slug small">Slug: /{{slug}}</span>
+        </span>
+          <span class="col-sm-2"></span>
+        </div>
+    </form>
+  </div>
 </template>

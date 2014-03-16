@@ -5,7 +5,7 @@ Template.categories.helpers({
 });
 
 Template.categories.events({
-  'click input[type=submit]': function(e){
+  'click .submit': function(e){
     e.preventDefault();
 
     var name = $('#name').val();
