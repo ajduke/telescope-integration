@@ -4,8 +4,22 @@
 
 .nav-header-strong{
   font-size: 28px;
+
   /*padding-top: 30px;*/
 }
+
+.nav-hh{
+  padding: 8px 0px;
+}
+
+.nav-main{
+  padding: 5px 3px;
+}
+
+.nav-col{
+  padding-top: 9px;
+}
+
 .new-post{
   padding-top: 9px;
   padding-right: 4px;
