@@ -6,6 +6,9 @@
     height: 69px;
 }
 
+.post-header{
+  padding: 5px;margin-bottom: 5px;
+}
 
 .glyphicon-lg{font-size:1.5em}
 .glyphicon-sm{font-size:1.4em;;color:#a4a9ab;padding-top: 9px}

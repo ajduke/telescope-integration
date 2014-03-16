@@ -1,11 +1,11 @@
 <template name="post_item">
   {{#with post}}
   <!--add for sticky post color for and note icon-->
-  <div class="panel" style="padding: 5px;margin-bottom: 5px;">
+  <div class="panel" style="padding: 5px;margin-bottom: 5px; {{#if sticky}} background: #fffce0;{{/if}}" >
     <!--panel body starts -->
     <div class="row">
       <div class="col-md-9 ">
-        <div class="blockquote-box blockquote-primary clearfix">
+        <div class="blockquote-box blockquote-primary clearfix" style=" ">
           <div class="sh-square pull-left">
             {{#if voted}}
             <span class="glyphicon glyphicon-ok glyphicon-sm"></span>
@@ -67,7 +67,9 @@
       </div>
     </div>
   </div>
-
+  {{#if body}}
+  <div class="post-message markdown">{{{body_formatted}}}</div>
+  {{/if}}
 
   {{/with}}
 

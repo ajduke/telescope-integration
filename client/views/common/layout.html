@@ -16,14 +16,8 @@
         color: {{secondaryColor}};
       }
     {{/if}}
-    {{#if headerColor}}
-      .header{
-        background-color: {{headerColor}};
-      }
-    {{/if}}
   </style>
-  <div class="outer-wrapper {{currentPage}}">
-      {{> mobile_nav}}
+  <div class="outer-wrapper {{currentPage}} telescope-wrapper">
       {{> nav}}
       {{> error}}
       {{yield}}

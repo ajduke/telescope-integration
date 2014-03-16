@@ -76,10 +76,6 @@ Template.user_edit.events({
       } else {
         throwError(i18n.t('Profile updated'));
       }
-      Deps.afterFlush(function() {
-        var element = $('.grid > .error');
-        $('html, body').animate({scrollTop: element.offset().top});
-      });
     });
   }
 

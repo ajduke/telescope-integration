@@ -46,13 +46,13 @@ Template.posts_digest.created = function(){
   });  
 };
 
-Template.posts_digest.rendered = function(){
-  var distanceFromTop = 0;
-  $('.post').each(function(){
-    distanceFromTop += $(this).height();
-  });
-  distanceFromTop+=55;
-  Session.set('distanceFromTop', distanceFromTop);
-  $('body').css('min-height',distanceFromTop+160);
-  $('.more-button').css('top', distanceFromTop+"px");  
-}
+//Template.posts_digest.rendered = function(){
+//  var distanceFromTop = 0;
+//  $('.post').each(function(){
+//    distanceFromTop += $(this).height();
+//  });
+//  distanceFromTop+=55;
+//  Session.set('distanceFromTop', distanceFromTop);
+//  $('body').css('min-height',distanceFromTop+160);
+//  $('.more-button').css('top', distanceFromTop+"px");
+//}
