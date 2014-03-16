@@ -4,15 +4,20 @@
     <div>
       {{i18n "Please fill in your email below to finish signing up."}}
     </div>
-    <form>
-      <div class="control-group">
-        <label>{{i18n "Email"}}</label>
-        <div class="controls">
-          <input name="email" type="text" value="{{profile.email}}" />
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-2">{{i18n "Email"}}</label>
+        <div class="col-sm-10">
+          <input name="email" class="form-control" type="text" value="{{profile.email}}" />
         </div>
       </div>
-      <div class="form-actions">
-        <input type="submit" class="button" value="{{i18n "Submit"}}" />
+      <div class="form-group">
+        <span class="col-sm-3"></span>
+        <span class="col-sm-6">
+          <input type="submit" class="button form-control" value="{{i18n "Submit"}}" />
+        </span>
+        <span class="col-sm-3"></span>
+
       </div>
     </form>
     {{/with}}
