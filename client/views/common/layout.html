@@ -24,14 +24,12 @@
   </style>
   <div class="outer-wrapper {{currentPage}}">
       {{> mobile_nav}}
-    <div class="content-wrapper template-{{pageName}}">
       {{> nav}}
       {{> error}}
       {{yield}}
       {{> notifications}}
       {{> footer}}
       <div class="overlay hidden"></div>
-    </div>
     {{{extraCode}}}
   </div>
 </template>

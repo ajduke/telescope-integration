@@ -56,7 +56,7 @@ Template.nav.editProfile=function(){
 }
 
 Template.nav.loggedInUserName=function(){
-  return Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
+  return Meteor.user().profile.name;
 }
 
 Template.nav.events({

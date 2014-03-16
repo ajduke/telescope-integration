@@ -1,159 +1,88 @@
-<template name="nav-old">
-  <header class="header grid">
-
-    <a id="mobile-menu" href="#menu" class="mobile mobile-button menu"><i class="icon-menu"></i><span>{{i18n "Menu"}}</span></a>
-
-    <ul class="nav site-nav desktop">
-      {{#if canView}}
-      <li class="dropdown">
-        <a class="View" href="/{{baseUrl}}">{{i18n "View"}}</a>
-        <div class="dropdown-menu">
-          <ul role="menu" aria-labelledby="dLabel">
-            <li><a class="top" href="/{{baseUrl}}/top">{{i18n "Top"}}</a></li>
-            <li><a class="new" href="/{{baseUrl}}/new">{{i18n "New"}}</a></li>
-            <li><a class="best" href="/{{baseUrl}}/best">{{i18n "Best"}}</a></li>
-            <li><a class="digest" href="/{{baseUrl}}/digest">{{i18n "Digest"}}</a></li>
-          </ul>
-        </div>
-      </li>
-      {{/if}}
-      {{#if hasCategories}}
-      <li class="dropdown">
-        <a class="categories" href="/{{baseUrl}}">{{i18n "Categories"}}</a>
-        <div class="dropdown-menu">
-          <ul role="menu" aria-labelledby="dLabel">
-            {{# each categories}}
-              <li><a class="pending" href="{{categoryLink}}">{{name}}</a></li>
-            {{/each}}
-          </ul>
-        </div>
-      </li>
-      {{/if}}
-      {{#if isAdmin}}
-      <li class="dropdown">
-        <a class="admin" href="/{{baseUrl}}">{{i18n "Administration"}}</a>
-        <div class="dropdown-menu">
-          <ul role="menu" aria-labelledby="dLabel">
-            <li><a class="pending" href="/{{baseUrl}}/pending">{{i18n "Pending"}}</a></li>
-            <li><a class="users" href="/{{baseUrl}}/all-users">{{i18n "Users"}}</a></li>
-            <li><a class="settings" href="/{{baseUrl}}/settings">{{i18n "Settings"}}</a></li>
-            <li><a class="categories" href="/{{baseUrl}}/categories">{{i18n "Categories"}}</a></li>
-            <li><a class="logs" href="/{{baseUrl}}/logs">{{i18n "Logs"}}</a></li>
-            <li><a class="categories" href="/{{baseUrl}}/toolbox">{{i18n "Toolbox"}}</a></li>
-          </ul>
-        </div>
-      </li>
-      {{/if}}
-      <li>
-        {{> search}}
-      </li>
-    </ul>
-
-    {{#if logo_url}}
-      <h1 class="logo image" style="height:{{logo_height}}px; width:{{logo_width}}px; top:{{logo_top}}px; margin-left:{{logo_offset}}px;">
-        <a href="/{{baseUrl}}">
-          <img src="{{logo_url}}" style="height:{{logo_height}}px;" alt="{{site_title}}"/>
-        </a>
-      </h1>
-    {{else}}
-      <h1 class="logo"><a href="/{{baseUrl}}">{{site_title}}</a></h1>
-    {{/if}}
-
-    {{#if canView}}
-    <ul class="nav user-nav desktop">
-      <li><a id="submit" class="submit button" href="/{{baseUrl}}/submit">{{i18n "Post"}}</a></li>
-    </ul>
-    {{/if}}
-
-    <!--<div class="auth-buttons">-->
-      <!--{{loginButtons align="right"}}-->
-    <!--</div>-->
-
-  </header>
-</template>
-
 <template name="nav">
-    <div class="container" >
-        <nav class="navbar navbar-default" role="navigation" >
+  <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Cybit QA</a>
-            </div>
-            <!-- Brand and toggle get grouped for better mobile display -->
-
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "View"}} <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="top" href="/{{baseUrl}}/top">{{i18n "Top"}}</a></li>
-                        <li><a class="new" href="/{{baseUrl}}/new">{{i18n "New"}}</a></li>
-                        <li><a class="best" href="/{{baseUrl}}/best">{{i18n "Best"}}</a></li>
-                        <li><a class="digest" href="/{{baseUrl}}/digest">{{i18n "Digest"}}</a></li>
-                    </ul>
-                </li>
-
-                {{#if hasCategories}}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Categories"}}<b class="caret"></b></a>
-                        <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
-                            {{# each categories}}
-                            <li><a class="pending" href="{{categoryLink}}">{{name}}</a></li>
-                            {{/each}}
-                        </ul>
-                </li>
-                {{/if}}
-
-                {{#if isAdmin}}
-                <li class="dropdown">
-                    <a class="admin" href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Administration"}}<b class="caret"></b></a>
-                    <ul role="menu" class="dropdown-menu"aria-labelledby="dLabel">
-                        <li><a class="pending" href="/{{baseUrl}}/pending">{{i18n "Pending"}}</a></li>
-                        <li><a class="users" href="/{{baseUrl}}/all-users">{{i18n "Users"}}</a></li>
-                        <li><a class="settings" href="/{{baseUrl}}/settings">{{i18n "Settings"}}</a></li>
-                        <li><a class="categories" href="/{{baseUrl}}/categories">{{i18n "Categories"}}</a></li>
-                        <li><a class="logs" href="/{{baseUrl}}/logs">{{i18n "Logs"}}</a></li>
-                        <li><a class="categories" href="/{{baseUrl}}/toolbox">{{i18n "Toolbox"}}</a></li>
-                    </ul>
-                </li>
-                {{/if}}
-                <li>
-                 {{> search}}
-                </li>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="navbar navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand nav-header-strong" href="#">Cybit QA</a>
+      </div>
+      <!-- Brand and toggle get grouped for better mobile display -->
 
 
-                </ul>
-              {{#if currentUser}}
-              <ul class="nav navbar-nav navbar-right ">
-                <li> <a id="submit" class="btn btn-link btn-info" href="/{{baseUrl}}/submit">New Post</a></li>
-                <li class="dropdown navbar-right">
-                    <a class="admin" href="#" class="dropdown-toggle " data-toggle="dropdown">Sign In as <b>{{loggedInUserName}}</b><b class="caret"></b></a>
-                    <ul role="menu" class="dropdown-menu"aria-labelledby="dLabel">
-                        <li> <a href={{viewProfile}} class="account-link button">View Profile</a></li>
-                        <li><a href={{editProfile}} class="account-link button">Edit Account</a></li>
-                        <li><a class="signout" href="#">Sign Out</a></li>
-                    </ul>
-                </li>
-              </ul>
-              {{else}}
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "View"}} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a class="top" href="/{{baseUrl}}/top">{{i18n "Top"}}</a></li>
+              <li><a class="new" href="/{{baseUrl}}/new">{{i18n "New"}}</a></li>
+              <li><a class="best" href="/{{baseUrl}}/best">{{i18n "Best"}}</a></li>
+              <li><a class="digest" href="/{{baseUrl}}/digest">{{i18n "Digest"}}</a></li>
+            </ul>
+          </li>
 
-              <ul class="nav navbar-nav navbar-right ">
-              <li> <a href="/{{baseUrl}}/login">Login to Post</a></li>
-              </ul>
-              {{/if}}
+          {{#if hasCategories}}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Categories"}}<b class="caret"></b></a>
+            <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
+              {{# each categories}}
+              <li><a class="pending" href="{{categoryLink}}">{{name}}</a></li>
+              {{/each}}
+            </ul>
+          </li>
+          {{/if}}
 
-            </div><!-- /.navbar-collapse -->
+          {{#if isAdmin}}
+          <li class="dropdown">
+            <a class="admin" href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Administration"}}<b
+              class="caret"></b></a>
+            <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
+              <li><a class="pending" href="/{{baseUrl}}/pending">{{i18n "Pending"}}</a></li>
+              <li><a class="users" href="/{{baseUrl}}/all-users">{{i18n "Users"}}</a></li>
+              <li><a class="settings" href="/{{baseUrl}}/settings">{{i18n "Settings"}}</a></li>
+              <li><a class="categories" href="/{{baseUrl}}/categories">{{i18n "Categories"}}</a></li>
+              <li><a class="logs" href="/{{baseUrl}}/logs">{{i18n "Logs"}}</a></li>
+              <li><a class="categories" href="/{{baseUrl}}/toolbox">{{i18n "Toolbox"}}</a></li>
+            </ul>
+          </li>
+          {{/if}}
+          <li>
+            {{> search}}
+          </li>
+        </ul>
+
+        {{#if currentUser}}
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="navbar-text"> Signed in as {{loggedInUserName}}</li>
+          <li class="dropdown">
+            <a class="admin" href="#" class="dropdown-toggle " data-toggle="dropdown">
+              <b>Profile</b><b class="caret"></b></a>
+            <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
+              <li><a href={{viewProfile}} class="account-link button">View Profile</a></li>
+              <li><a href={{editProfile}} class="account-link button">Edit Account</a></li>
+              <li><a class="signout" href="#">Sign Out</a></li>
+            </ul>
+          </li>
+          <li class="new-post"> <span class="btn-xs"> <a id="submit" class="btn btn-default" href="/{{baseUrl}}/submit"><strong>New Post</strong></a> </span></li>
+        </ul>
+        {{else}}
+        <ul class="nav navbar-nav navbar-right ">
+          <li><a href="/{{baseUrl}}/login">Login to Post</a></li>
+        </ul>
+        {{/if}}
+
+      </div>
+      <!-- /.navbar-collapse -->
 
     </nav>
-    </div>
+  </div>
 </template>
 
 
