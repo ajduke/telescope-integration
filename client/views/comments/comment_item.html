@@ -29,13 +29,25 @@
 
     <div  class="row" style="background-color: #fff">
       <div class="col-md-1">
-        <div class="votes votes-lg {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
+        <div class="votes votes-lg {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}} text-center">
+          {{#if upvoted}}
+          <a class="upvote" href="#">
+            <i class="glyphicon glyphicon-arrow-up "></i>
+          </a>
+          {{else}}
+          {{#if downvoted}}
+          <a class="downvote" href="#">
+            <i class="glyphicon glyphicon-arrow-down"></i>
+          </a>
+          {{else}}
           <a class="upvote" href="#">
             <i class="glyphicon glyphicon-arrow-up "></i>
           </a>
           <a class="downvote" href="#">
             <i class="glyphicon glyphicon-arrow-down"></i>
           </a>
+          {{/if}}
+          {{/if}}
         </div>
 
       </div>
