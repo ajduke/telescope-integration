@@ -12,13 +12,6 @@ if (Meteor.isClient) {
   });
 }
 
-Router.map(function(){
-    this.route('hello',{
-        path:'/',
-        template:'hello',
-        layoutTemplate :'std'
-    });
-})
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
