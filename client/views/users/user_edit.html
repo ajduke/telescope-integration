@@ -41,7 +41,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label">{{i18n "Bio"}}</label>
           <div class="col-sm-9">
-            <textarea name="bio"  class="form-control" style="resize: none" type="text">{{profile.bio}}</textarea>
+            <textarea name="bio" rows="6"  class="form-control" style="resize: none" type="text">{{profile.bio}}</textarea>
           </div>
         </div>
 
@@ -121,15 +121,14 @@
 
 
         <div class="form-group">
-          <span class="col-sm-3">
-            <div class="form-group">
-              <button class="btn btn-warning"  href="/{{baseUrl}}/forgot_password">{{i18n "Forgot password?"}}</button>
-            </div>
-          </span>
-
-          <span class="col-sm-5"></span>
           <span class="col-sm-4">
             <input type="submit" class=" btn btn-default form-control" value="{{i18n " Submit"}}" />
+
+          </span>
+
+          <span class="col-sm-4"></span>
+          <span class="col-sm-4">
+            <button class="btn btn-block btn-warning"  href="/{{baseUrl}}/forgot_password">{{i18n "Forgot password?"}}</button>
           </span>
         </div>
 

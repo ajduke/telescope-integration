@@ -64,8 +64,8 @@ Template.post_edit.helpers({
 Template.post_edit.rendered = function(){
   if(post && !this.editor){
 
-    this.editor= new EpicEditor(EpicEditorOptions).load();
-    this.editor.importFile('editor',post.body);
+//    this.editor= new EpicEditor(EpicEditorOptions).load();
+//    this.editor.importFile('editor',post.body);
 
     $('#submitted_date').datepicker();
 
@@ -98,7 +98,7 @@ Template.post_edit.events({
     var properties = {
       headline:         $('#title').val(),
       shortUrl:         shortUrl,
-      body:             instance.editor.exportFile(),
+      body:             $('.editor').val(),
       categories:       categories,
     };
 

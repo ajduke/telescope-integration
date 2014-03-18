@@ -19,8 +19,8 @@ Template.post_submit.helpers({
 
 Template.post_submit.rendered = function(){
   Session.set('selectedPostId', null);
-  if(!this.editor && $('#editor').exists())
-    this.editor= new EpicEditor(EpicEditorOptions).load();
+//  if(!this.editor && $('#editor').exists())
+//    this.editor= new EpicEditor(EpicEditorOptions).load();
   $('#submitted').datepicker().on('changeDate', function(ev){
     $('#submitted_hidden').val(moment(ev.date).valueOf());
   });
@@ -43,7 +43,7 @@ Template.post_submit.events({
     var title= $('#title').val();
     var url = $('#url').val();
     var shortUrl = $('#short-url').val();
-    var body = instance.editor.exportFile();
+    var body = $('.editor').val();
     var categories=[];
     var sticky=!!$('#sticky').attr('checked');
     var submitted = $('#submitted_hidden').val();
