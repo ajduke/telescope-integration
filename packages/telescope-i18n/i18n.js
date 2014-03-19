@@ -3,10 +3,10 @@ i18n = {
   translations: [],
 
   t: function (str) {
-    var lang = getSetting('language', 'en');
-    if(i18n.translations[lang] && i18n.translations[lang][str]){
-      return i18n.translations[lang][str];
-    }
+//    var lang = getSetting('language', 'en');
+//    if(i18n.translations[lang] && i18n.translations[lang][str]){
+//      return i18n.translations[lang][str];
+//    }
     return str; 
   }
 
