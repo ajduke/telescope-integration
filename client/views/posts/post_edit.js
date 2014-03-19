@@ -71,7 +71,7 @@ Template.post_edit.rendered = function(){
 
   }
 
-  $("#postUser").selectToAutocomplete();
+//  $("#postUser").selectToAutocomplete();
 
 }
 
