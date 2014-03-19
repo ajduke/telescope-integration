@@ -1,6 +1,3 @@
-Accounts.ui.config({
-  passwordSignupFields: 'USERNAME_AND_EMAIL'
-});
 baseUrl = 'forum';
 
 SharrreOptions={

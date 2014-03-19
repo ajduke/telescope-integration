@@ -7,7 +7,7 @@
 
       <fieldset class="well" style="background-color: #fff">
         {{#if profileIncomplete}}
-        <div class="text-center bg-danger">
+        <div class="alert text-center alert-danger">
           {{i18n "Please complete your profile below before continuing."}}
         </div>
         {{/if}}
@@ -126,12 +126,12 @@
 
           </span>
 
+
           <span class="col-sm-4"></span>
           <span class="col-sm-4">
-            <button class="btn btn-block btn-warning"  href="/{{baseUrl}}/forgot_password">{{i18n "Forgot password?"}}</button>
+            <a class="btn btn-block btn-warning" style="color: #fff"  href="/{{baseUrl}}/forgot_password">{{i18n "Forgot password?"}}</a>
           </span>
         </div>
-
 
       </form>
       </fieldset>

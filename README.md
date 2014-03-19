@@ -17,7 +17,6 @@ Telescope is an open-source, real-time social news site built with [Meteor](http
 - Notifications
 - Mobile-ready & responsive
 - Invite-only access for reading and/or posting
-- Markdown support
 - Day by day view
 
 # Installation

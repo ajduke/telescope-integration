@@ -37,16 +37,6 @@ Template.nav.helpers({
   }
 });
 
-Template.nav.rendered=function(){
-
-  if(!Meteor.user()){
-    $('.login-link-text').text("Sign Up/Sign In");
-  }else{
-    $('#login-buttons-logout').before('<a href=/'+baseUrl+'/users/'+Meteor.user().slug+' class="account-link button">View Profile</a>');
-    $('#login-buttons-logout').before('<a href=/'+baseUrl+'/account class="account-link button">Edit Account</a>');
-  }
-};
-
 Template.nav.viewProfile=function(){
   return "/"+baseUrl+'/users/'+Meteor.user().slug;
 }
@@ -65,10 +55,8 @@ Template.nav.events({
     Meteor.logout();
   },
   'click .signout': function(e){
-    console.log('sign out called')
     e.preventDefault();
     Meteor.logout();
-    Router.go('/forum/login');
   },
   'click #mobile-menu': function(e){
     e.preventDefault();
