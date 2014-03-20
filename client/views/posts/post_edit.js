@@ -99,7 +99,7 @@ Template.post_edit.events({
       headline:         $('#title').val(),
       shortUrl:         shortUrl,
       body:             $('.editor').val(),
-      categories:       categories
+      categories:       categories,
     };
 
     if(url){
@@ -116,14 +116,12 @@ Template.post_edit.events({
         }
       }
       adminProperties = {
-        sticky:     $('#sticky').attr('checked'),
+        sticky:     !!$('.sticky').attr('checked'),
         userId:     $('#postUser').val(),
-        status:     status
+        status:     status,
       };
       properties = _.extend(properties, adminProperties);
     }
-
-    console.log(adminProperties.sticky)
 
     Posts.update(post._id,{
       $set: properties
@@ -141,13 +139,14 @@ Template.post_edit.events({
     var post = this;
 
     e.preventDefault();
-    
+
     if(confirm("Are you sure?")){
       Meteor.call("deletePostById", post._id, function(error) {
         if (error) {
           console.log(error);
           throwError(error.reason);
         } else {
+//          throwError('Your post has been deleted.');
           Router.go('/'+baseUrl+"/posts/deleted");
         }
       });

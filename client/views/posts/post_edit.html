@@ -4,7 +4,7 @@
       <div class="col-md-2"></div>
       <div class="col-md-8">
         <!--main content area-->
-        {{#with post}}{{#constant}}
+        {{#with post}}{{#isolate}}
         <fieldset class="well" style="background-color: white">
           <div class="page-header">
             <h3 class="text-center text"> Edit Post Details</h3>
@@ -54,7 +54,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">{{i18n "Sticky?"}}</label>
             <div class="col-sm-9">
-              <input type="checkbox" name="sticky" id="sticky" {{isSticky}} />
+              <input type="checkbox"  name="sticky" id="sticky" {{isSticky}} />
             </div>
           </div>
           {{#if isApproved}}
@@ -115,7 +115,7 @@
         </form>
 
         </fieldset>
-        {{/constant}}{{/with}}
+        {{/isolate}}{{/with}}
       </div>
 
       <div class="col-md-2"></div>
