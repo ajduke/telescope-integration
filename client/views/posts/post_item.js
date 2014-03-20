@@ -73,7 +73,15 @@ Template.post_item.helpers({
   },
   pointsUnitDisplayText: function(){
     return this.votes == 1 ? i18n.t('point') : i18n.t('points');
+  },
+  commentsURL:function(){
+    return '/'+baseUrl+'/posts/'+this._id;
+  },
+  editURL:function(){
+    return '/'+baseUrl+'/posts/'+this._id+'/edit'
   }
+
+
 });
 
 var recalculatePosition = function ($object, pArray) {

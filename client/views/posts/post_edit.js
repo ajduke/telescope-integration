@@ -58,7 +58,11 @@ Template.post_edit.helpers({
   },
   shorten: function(){
     return !!getSetting('bitlyToken');
+  },
+  deletedURL:function(){
+    return '/'+baseUrl+'/posts/deleted'
   }
+
 });
 
 Template.post_edit.rendered = function(){

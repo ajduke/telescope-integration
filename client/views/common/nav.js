@@ -34,16 +34,46 @@ Template.nav.helpers({
   },
   categoryLink: function () {
     return getCategoryUrl(this.slug);
+  },
+  pendingURL: function(){
+    return '/'+baseUrl+'/pending';
+  },
+  categoriesURL: function(){
+    return '/'+baseUrl+'/categories';
+  },
+  allUsersURL: function(){
+    return '/'+baseUrl+'/all-users';
+  },
+  logsURL: function(){
+    return '/'+baseUrl+'/logs';
+  },
+  toolboxURL:function(){
+    return '/'+baseUrl+'/toolbox';
+  },
+  submitURL:function(){
+    return '/'+baseUrl+'/submit';
+  },
+  viewProfileURL: function(){
+    return "/"+baseUrl+'/users/'+Meteor.user().slug;
+  },
+  editProfileURL: function(){
+    return '/'+baseUrl+'/account';
+  },
+  topURL: function(){
+    return '/'+baseUrl+'/top';
+  },
+  newURL: function(){
+    return '/'+baseUrl+'/new';
+  },
+  digestURL: function(){
+    return '/'+baseUrl+'/digest';
+  },
+  bestURL: function(){
+    return '/'+baseUrl+'/best';
   }
+
 });
 
-Template.nav.viewProfile=function(){
-  return "/"+baseUrl+'/users/'+Meteor.user().slug;
-}
-
-Template.nav.editProfile=function(){
-  return '/'+baseUrl+'/account';
-}
 
 Template.nav.loggedInUserName=function(){
   return Meteor.user().profile.name;

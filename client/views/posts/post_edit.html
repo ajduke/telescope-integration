@@ -66,9 +66,6 @@
               <label class="radio-inline">
                 <input id="status_approved" type="radio" value="2" name="status" {{hasStatusApproved}} /> {{i18n "Approved"}}
               </label>
-              <label class="radio-inline">
-                <input id="status_rejected" type="radio" value="3" name="status" {{hasStatusRejected}} /> {{i18n "Rejected"}}
-              </label>
             </div>
           </div>
           {{/if}}
@@ -79,7 +76,7 @@
             </span>
             <span class="col-md-3"></span>
             <span class="col-md-3">
-              <button class="btn btn-danger delete-link" href="/{{baseUrl}}/posts/deleted">{{i18n "Delete Post"}}</button>
+              <button class="btn btn-danger delete-link" href="{{deletedURL}}">{{i18n "Delete Post"}}</button>
             </span>
 
 

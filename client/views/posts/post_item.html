@@ -38,10 +38,10 @@
                       class="unit">{{pointsUnitDisplayText}} </span></span>by <a class="post-author"
                                                                                  href="{{profileUrl}}">{{authorName}}</a>
             <span class="post-time">{{ago}}</span><span class="comments">, <a class="go-to-comments"
-                                                                              href="/{{baseUrl}}/posts/{{_id}}">{{comments}}
+                                                                              href="{{commentsURL}}">{{comments}}
             {{commentsDisplayText}}</a></span>
             {{#if can_edit}}
-            | <a href="/{{baseUrl}}/posts/{{_id}}/edit" class="edit-link goto-edit">Edit</a>
+            | <a href="{{editURL}}" class="edit-link goto-edit">Edit</a>
             {{/if}}
           </p>
 
@@ -59,7 +59,7 @@
                  data-text="{{headline}}" class="share-replace">
             </div>
           </div>
-          <a href="/{{baseUrl}}/posts/{{_id}}" class="square pull-right">
+          <a href="{{commentsURL}}" class="square pull-right">
             <span class="glyphicon glyphicon-arrow-right glyphicon-lg"></span>
             Dicuss
           </a>

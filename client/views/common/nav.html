@@ -20,10 +20,10 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "View"}} <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a class="top" href="/{{baseUrl}}/top">{{i18n "Top"}}</a></li>
-              <li><a class="new" href="/{{baseUrl}}/new">{{i18n "New"}}</a></li>
-              <li><a class="best" href="/{{baseUrl}}/best">{{i18n "Best"}}</a></li>
-              <li><a class="digest" href="/{{baseUrl}}/digest">{{i18n "Digest"}}</a></li>
+              <li><a class="top" href="{{topURL}}">{{i18n "Top"}}</a></li>
+              <li><a class="new" href="{{newURL}}">{{i18n "New"}}</a></li>
+              <li><a class="best" href="{{bestURL}}">{{i18n "Best"}}</a></li>
+              <li><a class="digest" href="{{digestURL}}">{{i18n "Digest"}}</a></li>
             </ul>
           </li>
 
@@ -43,11 +43,11 @@
             <a class="admin" href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Administration"}}<b
               class="caret"></b></a>
             <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
-              <li><a class="pending" href="/{{baseUrl}}/pending">{{i18n "Pending"}}</a></li>
-              <li><a class="users" href="/{{baseUrl}}/all-users">{{i18n "Users"}}</a></li>
-              <li><a class="categories" href="/{{baseUrl}}/categories">{{i18n "Categories"}}</a></li>
-              <li><a class="logs" href="/{{baseUrl}}/logs">{{i18n "Logs"}}</a></li>
-              <li><a class="categories" href="/{{baseUrl}}/toolbox">{{i18n "Toolbox"}}</a></li>
+              <li><a class="pending" href="{{pendingURL}}">{{i18n "Pending"}}</a></li>
+              <li><a class="users" href="{{allUsersURL}}">{{i18n "Users"}}</a></li>
+              <li><a class="categories" href="{{categoriesURL}}">{{i18n "Categories"}}</a></li>
+              <li><a class="logs" href="{{logsURL}}">{{i18n "Logs"}}</a></li>
+              <li><a class="categories" href="{{toolboxURL}}">{{i18n "Toolbox"}}</a></li>
             </ul>
           </li>
           {{/if}}
@@ -64,12 +64,12 @@
             <a class="admin" href="#" class="dropdown-toggle " data-toggle="dropdown">
               <b>Profile</b><b class="caret"></b></a>
             <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
-              <li><a href={{viewProfile}} class="account-link button">View Profile</a></li>
-              <li><a href={{editProfile}} class="account-link button">Edit Account</a></li>
+              <li><a href={{viewProfileURL}} class="account-link button">View Profile</a></li>
+              <li><a href={{editProfileURL}} class="account-link button">Edit Account</a></li>
               <li><a class="signout" href="#">Sign Out</a></li>
             </ul>
           </li>
-          <li class="new-post"> <span class="btn-xs"> <a id="submit" class="btn btn-default" href="/{{baseUrl}}/submit"><strong>New Post</strong></a> </span></li>
+          <li class="new-post"> <span class="btn-xs"> <a id="submit" class="btn btn-default" href="{{submitURL}}"><strong>New Post</strong></a> </span></li>
         </ul>
         {{else}}
         <ul class="nav navbar-nav navbar-right ">
