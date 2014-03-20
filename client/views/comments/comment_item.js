@@ -147,7 +147,15 @@ Template.comment_item.helpers({
     var user = Meteor.users.findOne(this.userId);
     if(user)
       return getProfileUrl(user);
-  }  
+  },
+  commentLinkUrl:function(){
+    return '/'+baseUrl+'/comments/'+this._id;
+  },
+  commentEditLinkUrl:function(){
+    return '/'+baseUrl+'/comments/'+this._id+'/edit'
+  }
+
+
 });
 
 Template.comment_item.events({
