@@ -4,7 +4,7 @@
   <div class="panel" style="padding: 5px;margin-bottom: 5px; {{#if sticky}} background: #fffce0;{{/if}}" >
     <!--panel body starts -->
     <div class="row">
-      <div class="col-md-9 ">
+      <div class="col-md-10">
         <div class="blockquote-box blockquote-primary clearfix" style=" ">
           <div class="sh-square pull-left">
             {{#if voted}}
@@ -45,25 +45,17 @@
             {{/if}}
           </p>
 
+
         </div>
 
       </div>
-      <div class="col-md-3">
-        <div class="post-share btn-group tp-padding pull-right blockquote-box blockquote-primary clearfix">
-          <a href="#" class="share-link square pull-left">
-            <span class="glyphicon glyphicon-share-alt glyphicon-lg"></span>
-            Share
-          </a>
-          <div class="share-options hidden pull-left">
-            <div data-url="{{#if url}}{{outgoingUrl}}{{else}}{{current_domain}}/{{baseUrl}}/posts/{{_id}}{{/if}}"
-                 data-text="{{headline}}" class="share-replace">
-            </div>
-          </div>
+      <div class="col-md-2">
+        <p class="post-share btn-group tp-padding pull-right blockquote-box blockquote-primary">
           <a href="{{commentsURL}}" class="square pull-right">
             <span class="glyphicon glyphicon-arrow-right glyphicon-lg"></span>
             Dicuss
           </a>
-        </div>
+        </p>
       </div>
     </div>
   </div>

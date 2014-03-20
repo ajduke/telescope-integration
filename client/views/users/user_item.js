@@ -29,6 +29,9 @@ Template.user_item.helpers({
   getInvitedUserProfileUrl: function () {
     var user = Meteor.users.findOne(this.invitedId);
     return getProfileUrl(user);
+  },
+  getInviteCount:function(){
+    return !this.inviteCount ? 0: this.inviteCount;
   }
 });
 
