@@ -99,7 +99,7 @@ Template.post_edit.events({
       headline:         $('#title').val(),
       shortUrl:         shortUrl,
       body:             $('.editor').val(),
-      categories:       categories,
+      categories:       categories
     };
 
     if(url){
@@ -118,7 +118,7 @@ Template.post_edit.events({
       adminProperties = {
         sticky:     !!$('#sticky').attr('checked'),
         userId:     $('#postUser').val(),
-        status:     status,
+        status:     status
       };
       properties = _.extend(properties, adminProperties);
     }

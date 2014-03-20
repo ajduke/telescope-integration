@@ -50,7 +50,7 @@ getNotificationContents = function(notification, context){
       var n = {
         subject: 'Your account has been approved.',
         text: 'Welcome to '+getSetting('title')+'! Your account has just been approved.',
-        html: 'Welcome to '+getSetting('title')+'!<br/> Your account has just been approved. <a href="'+Meteor.absoluteUrl()+'">Start posting.</a>'
+        html: 'Welcome to '+getSetting('title')+'!<br/> Your account has just been approved. <a href="'+Meteor.absoluteUrl()+"/"+appBaseUrl+'">Start posting.</a>'
       }
       break;
 
