@@ -1,5 +1,3 @@
-Template.comment_form.rendered = function(){
-}
 
 Template.comment_form.events({
   'submit form': function(e, instance){
@@ -8,21 +6,6 @@ Template.comment_form.events({
     clearSeenErrors();
 //    var content = instance.editor.exportFile();
     var content = $('.editor').val()
-    if(getCurrentTemplate() == 'comment_reply'){
-      // child comment
-      var parentComment = this.comment;
-      console.log(parentComment)
-      Meteor.call('comment', parentComment.post, parentComment._id, content, function(error, commentProperties){
-        if(error){
-          console.log(error);
-          throwError(error.reason);
-        }else{
-          $('.editor').val(' ')
-          trackEvent("newComment", commentProperties);
-          Router.go('/'+baseUrl+'/posts/'+parentComment.post+'/comment/'+commentProperties.commentId);
-        }
-      });
-    }else{
       // root comment
       // console.log(postObject)
       var post = postObject;
@@ -34,11 +17,9 @@ Template.comment_form.events({
         }else{
           trackEvent("newComment", commentProperties);
           Session.set('scrollToCommentId', commentProperties.commentId);
-//          instance.editor.importFile('editor', '');
 
         }
       });
       $('.editor').val(' ')
-    }
   }
 });

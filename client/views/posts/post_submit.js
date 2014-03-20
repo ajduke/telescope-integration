@@ -45,7 +45,7 @@ Template.post_submit.events({
     var shortUrl = $('#short-url').val();
     var body = $('.editor').val();
     var categories=[];
-    var sticky=!!$('#sticky').attr('checked');
+    var sticky=$('#sticky').attr('checked');
     var submitted = $('#submitted_hidden').val();
     var userId = $('.postUser').val();
     var status = parseInt($('input[name=status]:checked').val());
@@ -53,6 +53,7 @@ Template.post_submit.events({
     $('input[name=category]:checked').each(function() {
       categories.push(Categories.findOne($(this).val()));
      });
+    console.log('sticky '+sticky)
 
     var properties = {
         headline: title

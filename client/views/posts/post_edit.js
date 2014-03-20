@@ -116,12 +116,14 @@ Template.post_edit.events({
         }
       }
       adminProperties = {
-        sticky:     !!$('#sticky').attr('checked'),
+        sticky:     $('#sticky').attr('checked'),
         userId:     $('#postUser').val(),
         status:     status
       };
       properties = _.extend(properties, adminProperties);
     }
+
+    console.log(adminProperties.sticky)
 
     Posts.update(post._id,{
       $set: properties

@@ -26,8 +26,11 @@ Template.comment_edit.events({
     e.preventDefault();
     
     if(confirm(i18n.t("Are you sure?"))){
+      console.log('comment._id '+comment._id)
       Meteor.call('removeComment', comment._id);
-      Router.go('/'+baseUrl+"/comments/deleted");
+      Router.go('/'+baseUrl+"/posts/"+comment.post)
+      throwError("Your comment has been deleted.");
+
     }
   }
 });
