@@ -49,7 +49,7 @@ Meteor.publish('postUsers', function(postId) {
       users.push(post.userId);
       users = _.unique(users);
     }
-    
+
     return Meteor.users.find({_id: {$in: users}}, {fields: privacyOptions});
   }
   return [];
@@ -145,7 +145,7 @@ Meteor.publish('postsList', function(terms) {
 // Publish comments for a specific post
 
 Meteor.publish('postComments', function(postId) {
-  if(canViewById(this.userId)){  
+  if(canViewById(this.userId)){
     return Comments.find({post: postId});
   }
   return [];

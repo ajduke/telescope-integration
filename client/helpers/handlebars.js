@@ -1,7 +1,11 @@
 // ** Handlebars helpers **
 
 Handlebars.registerHelper("baseUrl", function(){
-    return baseUrl;
+    return AppConfig.appBaseUrl;
+});
+
+Handlebars.registerHelper("AppTitle", function(){
+  return AppConfig.title;
 });
 
 
