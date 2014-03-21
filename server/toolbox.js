@@ -24,18 +24,19 @@ Meteor.methods({
 
     var category = Categories.findOne(categoryId);
     if (!category) {
-      Posts.update(
+     bb= Posts.update(
         {}
       , {$pull: {categories: {_id: categoryId}}}
       , {multi: true}
       );
     } else {
       // Such update is server-only, because Minimongo does not support $ yet
-      Posts.update(
+      tt =Posts.update(
         {'categories._id': categoryId}
       , {$set: {'categories.$': category}}
       , {multi: true}
       );
+
     }
   }
 })

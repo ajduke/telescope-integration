@@ -10,9 +10,54 @@
   padding: 5px;margin-bottom: 5px;
 }
 
-.glyphicon-lg{font-size:1.5em}
-.glyphicon-sm{font-size:1.4em;;color:#a4a9ab;padding-top: 9px}
-.sh-square{width:35px;height:80px;margin-right:22px;text-align:center!important;background-color:#E6E6E6;padding:20px 0}
+.glyphicon-lg{
+    font-size:1.5em;
+    -webkit-transition: 0.3s ;
+    -moz-transition: 0.3s ;
+    -ms-transition: 0.3s ;
+    -o-transition: 0.3s ;transition: 0.3s ;
+
+}
+.glyphicon-sm{
+    font-size:1.4em;;color:#a4a9ab;padding-top: 9px;
+    -webkit-transition: 0.3s ;
+    -moz-transition: 0.3s ;
+    -ms-transition: 0.3s ;
+    -o-transition: 0.3s ;transition: 0.3s ;
+}
+
+.upvote-lnk.sh-square:hover .glyphicon-chevron-up{
+    color: #fff;
+}
+
+.upvote-lnk.sh-square:hover .glyphicon-sm{
+    padding-top: 4px;
+}
+
+.sh-square{
+    cursor: pointer;
+    width:35px;height:80px;margin-right:22px;text-align:center!important;background-color:#E6E6E6;padding:20px 0
+}
+.sh-square:hover{
+    background-color: #ccc;
+}
+
+
+.square:hover .glyphicon-arrow-right{
+    color: #fff;
+}
+
+.blockquote-box.blockquote-primary .square:hover .glyphicon-lg{
+    padding-left: 5px;
+}
+
+.blockquote-box.blockquote-primary .square:hover{
+    background-color: #ccc;
+}
+.blockquote-box.blockquote-primary .square:hover .discussText{
+    color: #fff;
+}
+
 .blockquote-box{margin-bottom:4px}
 .tp-padding{margin-top: 11px}
 .blockquote-box .square{width:60px;min-height:35px;margin-right:22px;text-align:center!important;background-color:#E6E6E6;padding:8px 0}

@@ -6,11 +6,12 @@
     <div class="row">
       <div class="col-md-10">
         <div class="blockquote-box blockquote-primary clearfix" style=" ">
-          <div class="sh-square pull-left">
+          <div class="upvote-lnk sh-square pull-left">
+
             {{#if voted}}
             <span class="glyphicon glyphicon-ok glyphicon-sm"></span>
             {{else}}
-            <a class="upvote-lnk glyphicon glyphicon-chevron-up glyphicon-sm" href="#"><span></span></a>
+            <a class=" glyphicon glyphicon-chevron-up glyphicon-sm" href="#"><span></span></a>
             {{/if}}
           </div>
 
@@ -55,7 +56,7 @@
         <p class="post-share btn-group tp-padding pull-right blockquote-box blockquote-primary">
           <a href="{{commentsURL}}" class="square pull-right">
             <span class="glyphicon glyphicon-arrow-right glyphicon-lg"></span>
-            Dicuss
+            <span class="discussText">Dicuss</span>
           </a>
         </p>
       </div>

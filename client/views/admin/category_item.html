@@ -1,5 +1,6 @@
 <template name="telescope_category_item">
   <div>
+    <div class="text text-center" style="padding-bottom: 10px;"> Edit the categories here and keep it empty if you want to remove it</div>
     <form class="form-horizontal">
 
         <div class="form-group">
@@ -7,7 +8,7 @@
         <span class="col-sm-8">
         <div class="input-group">
           <input id="name_{{_id}}" type="text" class="form-control" value="{{name}}"/>
-          <span class="input-group-addon"><a class="button submit edit-link" href="#">Save</a></span>
+          <span class="input-group-addon"><a class="button edit-link" href="#">Save</a></span>
         </div>
         <span class="category-slug small">Slug: /{{slug}}</span>
         </span>
