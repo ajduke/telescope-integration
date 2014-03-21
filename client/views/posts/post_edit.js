@@ -61,6 +61,9 @@ Template.post_edit.helpers({
   },
   deletedURL:function(){
     return '/'+baseUrl+'/posts/deleted'
+  },
+  enableCategories: function(){
+    return typeof TelescopeConfig.enableCategories  === 'undefined' ? true : TelescopeConfig.enableCategories
   }
 
 });

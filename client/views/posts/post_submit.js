@@ -14,7 +14,11 @@ Template.post_submit.helpers({
   isSelected: function(){
     var post=Posts.findOne(Session.get('selectedPostId'));
     return post && this._id == post.userId;
+  },
+  enableCategories: function(){
+    return typeof TelescopeConfig.enableCategories  === 'undefined' ? true : TelescopeConfig.enableCategories
   }
+
 });
 
 Template.post_submit.rendered = function(){

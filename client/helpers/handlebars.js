@@ -1,11 +1,11 @@
 // ** Handlebars helpers **
 
 Handlebars.registerHelper("baseUrl", function(){
-    return AppConfig.appBaseUrl;
+    return TelescopeConfig.appBaseUrl;
 });
 
 Handlebars.registerHelper("AppTitle", function(){
-  return AppConfig.title;
+  return TelescopeConfig.title;
 });
 
 

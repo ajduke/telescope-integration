@@ -24,19 +24,21 @@
             </a>
             <small>
               {{#if url}}<span>{{domain}}</span>{{/if}}
+              {{#if enableCategories}}
               {{#each categories}}
               <a href="{{categoryLink}}" class="btn btn-default btn-xs category-{{slug}}" style="font-size: 10px;padding-top: 0px">
                 <span class="glyphicon glyphicon-tag" style="font-size: .8em"></span>
                 {{name}}</a>
               {{/each}}
+              {{/if}}
 
             </small>
 
           </h4>
           <p class="small">
                     <span class="points">{{votes}} <span
-                      class="unit">{{pointsUnitDisplayText}} </span></span>by <a class="post-author"
-                                                                                 href="{{profileUrl}}">{{authorName}}</a>
+                      class="unit">{{pointsUnitDisplayText}} </span></span>by
+            <a class="post-author" href="{{#if enableUserLinks}}{{profileUrl}} {{else}} #{{/if}}">{{authorName}}</a>
             <span class="post-time">{{ago}}</span><span class="comments">, <a class="go-to-comments"
                                                                               href="{{commentsURL}}">{{comments}}
             {{commentsDisplayText}}</a></span>

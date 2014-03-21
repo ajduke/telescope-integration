@@ -32,6 +32,8 @@
             <label class="col-sm-3 control-label ">{{i18n "Body"}}</label>
             <div class="col-sm-9" ><textarea rows="6" id="body" value=""  class="editor form-control" class="input-xlarge">{{body}}</textarea></div>
           </div>
+
+          {{#if enableCategories}}
           {{#if categoriesEnabled}}
           <div class="form-group">
             <label class="col-sm-3 control-label">{{i18n "Categories"}}</label>
@@ -44,6 +46,8 @@
             </div>
           </div>
           {{/if}}
+          {{/if}}
+
           {{#if isAdmin}}
           <div class="form-group">
             <label class="col-sm-3 control-label">{{i18n "Inactive?"}}</label>

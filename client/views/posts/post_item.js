@@ -79,8 +79,13 @@ Template.post_item.helpers({
   },
   editURL:function(){
     return '/'+baseUrl+'/posts/'+this._id+'/edit'
-  }
-
+  },
+  enableCategories: function(){
+    return typeof TelescopeConfig.enableCategories  === 'undefined' ? true : TelescopeConfig.enableCategories
+  },
+  enableUserLinks: function(){
+  return typeof TelescopeConfig.enableUserLinks  === 'undefined' ? true : TelescopeConfig.enableUserLinks
+}
 
 });
 

@@ -36,6 +36,8 @@
           </div>
         </div>
 
+        {{#if enableCategories}}
+
         {{#if categoriesEnabled}}
         <div class="form-group">
           <label class="col-sm-2 control-label">{{i18n "Category"}}</label>
@@ -47,6 +49,7 @@
             {{/each}}
           </div>
         </div>
+        {{/if}}
         {{/if}}
 
         {{#if isAdmin}}

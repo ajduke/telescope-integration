@@ -70,6 +70,9 @@ Template.nav.helpers({
   },
   bestURL: function(){
     return '/'+baseUrl+'/best';
+  },
+  enableCategories: function(){
+    return typeof TelescopeConfig.enableCategories  === 'undefined' ? true : TelescopeConfig.enableCategories
   }
 
 });

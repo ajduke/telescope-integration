@@ -16,7 +16,13 @@ Template.layout.helpers({
   },
   extraCode: function(){
     return getSetting('extraCode');
-  }     
+  },
+  enabledNotification: function(){
+    return TelescopeConfig.enableNotifications;
+  },
+  bgColor:function(){
+    return  typeof TelescopeConfig.backgroudColor  === 'undefined' ? '#F6F4F2' : TelescopeConfig.backgroudColor ;
+  }
 });
 
 Template.layout.created = function(){
