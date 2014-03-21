@@ -1,30 +1,17 @@
-<template name="layout">
+<template name="telescope_layout">
   <style>
       body{
           background-color: {{bgColor}};
       }
-    {{#if buttonColor}}
-      input[type="submit"], button, .button, .auth-buttons #login-buttons #login-buttons-password, .btn, .error{
-        background-color: {{buttonColor}};
-      }
-      a:hover, .post-content .post-heading .post-title:hover, .post-content .post-upvote .upvote-link i, .comment-actions a i, .comment-actions.upvoted .upvote i, .comment-actions.downvoted .downvote i{
-        color: {{buttonColor}};
-      }
-    {{/if}}
-    {{#if secondaryColor}}
-      .post-content .post-upvote .upvote-link.voted i.icon-check{
-        color: {{secondaryColor}};
-      }
-    {{/if}}
   </style>
   <div class="outer-wrapper {{currentPage}} telescope-wrapper">
-      {{> nav}}
-      {{> error}}
+      {{> telescope_nav}}
+      {{> telescope_error}}
       {{yield}}
       {{#if enabledNotification}}
-      {{> notifications}}
+      {{> telescope_notifications}}
       {{/if}}
-      {{> footer}}
+      {{> telescope_footer}}
       <div class="overlay hidden"></div>
     {{{extraCode}}}
   </div>

@@ -1,10 +1,10 @@
-Template.categories.helpers({
+Template.telescope_categories.helpers({
   categories: function(){
     return Categories.find({}, {sort: {name: 1}});
   }
 });
 
-Template.categories.events({
+Template.telescope_categories.events({
   'click .submit': function(e){
     e.preventDefault();
 

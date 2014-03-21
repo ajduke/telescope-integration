@@ -1,4 +1,4 @@
-Template.search.helpers({
+Template.telescope_search.helpers({
   searchQuery: function () {
     return Session.get("searchQuery");
   },
@@ -7,11 +7,11 @@ Template.search.helpers({
   }
 });
 
-Template.search.preserve({
+Template.telescope_search.preserve({
   'input#search': function (node) { return node.id; }
 });
 
-Template.search.events({
+Template.telescope_search.events({
   'keyup, search .search-field': function(e){
     e.preventDefault();
     var val = $(e.target).val(),

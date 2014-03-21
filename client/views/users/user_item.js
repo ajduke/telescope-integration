@@ -1,4 +1,4 @@
-Template.user_item.helpers({
+Template.telescope_user_item.helpers({
   avatarUrl: function(){
     return getAvatarUrl(this);
   },
@@ -35,7 +35,7 @@ Template.user_item.helpers({
   }
 });
 
-Template.user_item.events({
+Template.telescope_user_item.events({
   'click .invite-link': function(e, instance){
     e.preventDefault();
     Meteor.call('inviteUser', instance.data._id);

@@ -1,8 +1,8 @@
-Template.post_item.created = function () {
+Template.telescope_post_item.created = function () {
   instance = this;
 };
 
-Template.post_item.helpers({
+Template.telescope_post_item.helpers({
   post: function(){
     // note: when the data context is set by the router, it will be "this.post". When set by a parent template it'll be "this"
     return this.post || this;
@@ -104,7 +104,7 @@ var recalculatePosition = function ($object, pArray) {
   }
 }
 
-Template.post_item.rendered = function(){
+Template.telescope_post_item.rendered = function(){
 //  var instance = this,
 //      $instance = $(instance.firstNode.nextSibling),
 //      top = $instance.position().top;
@@ -122,7 +122,7 @@ Template.post_item.rendered = function(){
 
 };
 
-Template.post_item.events({
+Template.telescope_post_item.events({
   'click .upvote-lnk': function(e, instance){
     var post = this;
     e.preventDefault();

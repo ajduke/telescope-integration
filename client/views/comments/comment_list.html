@@ -1,7 +1,7 @@
-<template name="comment_list">
+<template name="telescope_comment_list">
   {{#if has_comments}}
       {{#each child_comments}}
-        {{> comment_item}}
+        {{> telescope_comment_item}}
       {{/each}}
   {{else}}
     <p>{{i18n "No comments."}}</p>

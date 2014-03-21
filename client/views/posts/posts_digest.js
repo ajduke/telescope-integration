@@ -1,4 +1,4 @@
-Template.posts_digest.helpers({
+Template.telescope_posts_digest.helpers({
   hasPosts: function(){
     return !!this.posts.count();  
   },
@@ -33,7 +33,7 @@ Template.posts_digest.helpers({
   }
 });
 
-Template.posts_digest.created = function(){
+Template.telescope_posts_digest.created = function(){
   $(document).unbind('keyup'); //remove any potential existing bindings to avoid duplicates
   var currentDate=moment(Session.get('currentDate')).startOf('day');
   var today=moment(new Date()).startOf('daysy');

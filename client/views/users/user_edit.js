@@ -1,4 +1,4 @@
-Template.user_edit.helpers({
+Template.telescope_user_edit.helpers({
   profileIncomplete : function() {
     return this && !this.loading && !userProfileComplete(this);
   },
@@ -31,7 +31,7 @@ Template.user_edit.helpers({
   }
 })
 
-Template.user_edit.events({
+Template.telescope_user_edit.events({
   'submit form': function(e){
     e.preventDefault();
 

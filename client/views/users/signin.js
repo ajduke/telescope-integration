@@ -1,4 +1,4 @@
-Template.signin.events({
+Template.telescope_signin.events({
     'click input[type=submit]': function(event){
       event.preventDefault();
       var username = $('#username').val();

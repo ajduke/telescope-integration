@@ -1,4 +1,4 @@
-Template.nav.helpers({
+Template.telescope_nav.helpers({
   site_title: function(){
     return getSetting('title');
   },
@@ -78,11 +78,11 @@ Template.nav.helpers({
 });
 
 
-Template.nav.loggedInUserName=function(){
+Template.telescope_nav.loggedInUserName=function(){
   return Meteor.user().profile.name;
 }
 
-Template.nav.events({
+Template.telescope_nav.events({
   'click #logout': function(e){
     e.preventDefault();
     Meteor.logout();

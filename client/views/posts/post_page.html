@@ -1,12 +1,12 @@
-<template name="post_page">
+<template name="telescope_post_page">
 	{{#if canView}}
     {{#with post}}
     <div class="container">
-      {{> post_item}}
+      {{> telescope_post_item}}
       {{#if canComment}}
-        {{> comment_form}}
+        {{> telescope_comment_form}}
       {{/if}}
-      {{> comment_list}}
+      {{> telescope_comment_list}}
     </div>
     {{/with}}
   {{/if}}

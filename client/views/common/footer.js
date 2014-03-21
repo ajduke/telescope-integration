@@ -1,4 +1,4 @@
-Template.footer.helpers({
+Template.telescope_footer.helpers({
   footerCode: function(){
     return getSetting('footerCode');
   }, 

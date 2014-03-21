@@ -1,7 +1,7 @@
-Template.comment_edit.rendered = function(){
+Template.telescope_comment_edit.rendered = function(){
 }
 
-Template.comment_edit.events({
+Template.telescope_comment_edit.events({
   'click input[type=submit]': function(e, instance){
     var comment = this;
     var content  = $('.edt').val();

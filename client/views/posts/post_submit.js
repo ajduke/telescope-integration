@@ -1,4 +1,4 @@
-Template.post_submit.helpers({
+Template.telescope_post_submit.helpers({
   categoriesEnabled: function(){
     return Categories.find().count();
   },
@@ -21,7 +21,7 @@ Template.post_submit.helpers({
 
 });
 
-Template.post_submit.rendered = function(){
+Template.telescope_post_submit.rendered = function(){
   Session.set('selectedPostId', null);
 //  if(!this.editor && $('#editor').exists())
 //    this.editor= new EpicEditor(EpicEditorOptions).load();
@@ -33,7 +33,7 @@ Template.post_submit.rendered = function(){
 
 }
 
-Template.post_submit.events({
+Template.telescope_post_submit.events({
   'click input[type=submit]': function(e, instance){
     e.preventDefault();
 

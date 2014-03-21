@@ -63,7 +63,7 @@ findQueueContainer=function($comment){
   return $container;
 };
 
-Template.comment_item.created = function() {
+Template.telescope_comment_item.created = function() {
   // if comments are supposed to be queued, then queue this comment on create
   this.isQueued = window.queueComments;
 }
@@ -99,7 +99,7 @@ Template.comment_item.created = function() {
 //}
 
 
-Template.comment_item.helpers({
+Template.telescope_comment_item.helpers({
   full_date: function(){
     var submitted = new Date(this.submitted);
     return submitted.toString();
@@ -158,7 +158,7 @@ Template.comment_item.helpers({
 
 });
 
-Template.comment_item.events({
+Template.telescope_comment_item.events({
   'click .queue-comment': function(e){
     e.preventDefault();
     var current_comment_id=$(event.target).closest(".comment").attr("id");

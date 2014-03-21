@@ -1,4 +1,4 @@
-Template.comment_page.helpers({
+Template.telescope_comment_page.helpers({
   post: function () {
     return Posts.findOne(this.comment.post);
   }

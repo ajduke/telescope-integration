@@ -1,5 +1,5 @@
 
-Template.comment_form.events({
+Template.telescope_comment_form.events({
   'submit form': function(e, instance){
     e.preventDefault();
     $(e.target).addClass('disabled');

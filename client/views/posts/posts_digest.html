@@ -1,4 +1,4 @@
-<template name="posts_digest">
+<template name="telescope_posts_digest">
   <div class="container">
     <div class="grid-block">
       {{i18n "The top 5 posts of each day."}} |
@@ -14,7 +14,7 @@
   {{#if hasPosts}}
     <div class="container list">
       {{#each posts}}
-        {{> post_item}}
+        {{> telescope_post_item}}
       {{/each}}
     </div>
   {{else}}

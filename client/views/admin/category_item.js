@@ -1,4 +1,4 @@
-Template.category_item.events({
+Template.telescope_category_item.events({
   'click .edit-link': function(e, instance){
     e.preventDefault();
     var categoryId = instance.data._id;

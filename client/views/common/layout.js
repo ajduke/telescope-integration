@@ -1,4 +1,4 @@
-Template.layout.helpers({
+Template.telescope_layout.helpers({
   pageName : function(){
     getCurrentTemplate();
   },
@@ -25,11 +25,11 @@ Template.layout.helpers({
   }
 });
 
-Template.layout.created = function(){
+Template.telescope_layout.created = function(){
   Session.set('currentScroll', null);
 }
 
-Template.layout.rendered = function(){
+Template.telescope_layout.rendered = function(){
     if(currentScroll=Session.get('currentScroll')){
       $('body').scrollTop(currentScroll);
       Session.set('currentScroll', null);

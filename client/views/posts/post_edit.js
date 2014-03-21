@@ -5,11 +5,11 @@
 //    '[name]': function(node) { return node.getAttribute('name');}
 // });
 
-Template.post_edit.created = function(){
+Template.telescope_post_edit.created = function(){
   post = Posts.findOne(this.data.postId);
 }
 
-Template.post_edit.helpers({
+Template.telescope_post_edit.helpers({
   post: function () {
     return Posts.findOne(this.postId);
   },
@@ -68,7 +68,7 @@ Template.post_edit.helpers({
 
 });
 
-Template.post_edit.rendered = function(){
+Template.telescope_post_edit.rendered = function(){
   if(post && !this.editor){
 
 //    this.editor= new EpicEditor(EpicEditorOptions).load();
@@ -82,7 +82,7 @@ Template.post_edit.rendered = function(){
 
 }
 
-Template.post_edit.events({
+Template.telescope_post_edit.events({
   'click input[type=submit]': function(e, instance){
     var post = this;
     var categories = [];

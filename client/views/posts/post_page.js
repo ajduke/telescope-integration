@@ -1,4 +1,4 @@
-Template.post_page.helpers({
+Template.telescope_post_page.helpers({
   post: function () {
     return Posts.findOne(this.postId);
   },
@@ -10,7 +10,7 @@ Template.post_page.helpers({
   }
 }); 
 
-Template.post_page.rendered = function(){
+Template.telescope_post_page.rendered = function(){
   if((scrollToCommentId=Session.get('scrollToCommentId')) && !this.rendered && $('#'+scrollToCommentId).exists()){
     scrollPageTo('#'+scrollToCommentId);
     Session.set('scrollToCommentId', null);

@@ -1,4 +1,4 @@
-<template name="notifications">
+<template name="telescope_notifications">
 	{{#if currentUser}}
 		{{#if canPost}}
 		<div class="notifications notifications-open">
@@ -14,7 +14,7 @@
 			<a href="#" class="mark-as-read">{{i18n "Mark all as read"}}</a>
       <div style="height: 100%;overflow: auto;">
 			{{#each notifications}}
-				{{> notification_item}}
+				{{> telescope_notification_item}}
 		    {{/each}}
       </div>
 		</div>

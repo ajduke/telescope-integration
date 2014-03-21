@@ -1,4 +1,4 @@
-Template.posts_list.helpers({
+Template.telescope_posts_list.helpers({
   posts : function () {
     this.postsList.rewind();    
     var posts = this.postsList.map(function (post, index, cursor) {
@@ -18,7 +18,7 @@ Template.posts_list.helpers({
   }
 });
 
-Template.posts_list.rendered = function(){
+Template.telescope_posts_list.rendered = function(){
   var distanceFromTop = 0;
   $('.post').each(function(){
     distanceFromTop += $(this).height();

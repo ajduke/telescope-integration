@@ -1,4 +1,4 @@
-Template.notifications.helpers({
+Template.telescope_notifications.helpers({
   notifications: function(){
     return Notifications.find({userId: Meteor.userId()}, {sort: {timestamp: -1}});
   },
@@ -17,7 +17,7 @@ Template.notifications.helpers({
   }
 });
 
-Template.notifications.events({
+Template.telescope_notifications.events({
 	'click .notifications-toggle': function(e){
     e.preventDefault();
 		$('body').toggleClass('notifications-open');
