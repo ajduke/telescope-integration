@@ -33,7 +33,7 @@
           <p><b>Member Since:</b> {{createdAtFormatted}}</p>
           <p class="bg-primary">
             {{#if canEditProfile}}
-            <a class="btn btn-default pull-left" href="/{{baseUrl}}/users/{{slug}}/edit">{{i18n "Edit profile"}}</a>
+            <a class="btn btn-default pull-left" href="{{editURL}}">{{i18n "Edit profile"}}</a>
             {{/if}}
 
             {{#if canInvite}}

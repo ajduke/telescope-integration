@@ -21,6 +21,9 @@ Template.telescope_user_profile.helpers({
   },
   getGitHubName: function () {
     return getGitHubName(this);
+  },
+  editURL:function(){
+    return '/'+baseUrl+'/users/'+this.slug+'/edit'
   }
 });
 
