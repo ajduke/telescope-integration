@@ -1388,7 +1388,9 @@ body.pageslide-open {
     -moz-box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.15);
     box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.15); }
 
-
+textarea{
+    resize: none;
+}
 
 @media screen and (max-width: 500px) {
 
@@ -1463,3 +1465,6 @@ body.pageslide-open {
         /* line 222, ../sass/partials/_mobile.scss */
         .post .post-actions li a .action {
           display: none; } }
+
+
+
