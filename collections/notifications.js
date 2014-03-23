@@ -1,4 +1,4 @@
-Notifications = new Meteor.Collection('notifications');
+Notifications = new Meteor.Collection('telescopeNotifications');
 
 Notifications.allow({
     insert: function(userId, doc){

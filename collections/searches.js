@@ -1,4 +1,4 @@
-Searches = new Meteor.Collection('searches');
+Searches = new Meteor.Collection('telescopeSearches');
 
 Searches.allow({
   update: isAdminById

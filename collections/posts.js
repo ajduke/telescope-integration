@@ -1,4 +1,4 @@
-Posts = new Meteor.Collection('posts');
+Posts = new Meteor.Collection('telescopePosts');
 
 STATUS_PENDING=1;
 STATUS_APPROVED=2;

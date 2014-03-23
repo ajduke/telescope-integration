@@ -1,6 +1,6 @@
 // database migrations
 // http://stackoverflow.com/questions/10365496/meteor-how-to-perform-database-migrations
-Migrations = new Meteor.Collection('migrations');
+Migrations = new Meteor.Collection('telescopeMigrations');
 
 Meteor.startup(function () {
 

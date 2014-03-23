@@ -1,4 +1,4 @@
-Categories = new Meteor.Collection('categories');
+Categories = new Meteor.Collection('telescopeCategories');
 
 Categories.allow({
   insert: isAdminById
