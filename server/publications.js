@@ -21,9 +21,10 @@ Meteor.publish('currentUser', function() {
   return user;
 });
 
+
 // Publish a single user
 
-Meteor.publish('singleUser', function(userIdOrSlug) {
+Meteor.publish('telescopeSingleUser', function(userIdOrSlug) {
   if(canViewById(this.userId)){
     var options = isAdminById(this.userId) ? {limit: 1} : {limit: 1, fields: privacyOptions};
     var findById = Meteor.users.find(userIdOrSlug, options);
@@ -36,7 +37,7 @@ Meteor.publish('singleUser', function(userIdOrSlug) {
 
 // Publish authors of the current post and its comments
 
-Meteor.publish('postUsers', function(postId) {
+Meteor.publish('telescopePostUsers', function(postId) {
   if(canViewById(this.userId)){
     // publish post author and post commenters
     var post = Posts.findOne(postId),
@@ -57,7 +58,7 @@ Meteor.publish('postUsers', function(postId) {
 
 // Publish author of the current comment
 
-Meteor.publish('commentUser', function(commentId) {
+Meteor.publish('telescopeCommentUser', function(commentId) {
   if(canViewById(this.userId)){
     var comment = Comments.findOne(commentId);
     return Meteor.users.find({_id: comment && comment.userId}, {fields: privacyOptions});
@@ -67,7 +68,7 @@ Meteor.publish('commentUser', function(commentId) {
 
 // Publish all the users that have posted the currently displayed list of posts
 
-Meteor.publish('postsListUsers', function(terms) {
+Meteor.publish('telescopePostsListUsers', function(terms) {
   if(canViewById(this.userId)){
     var parameters = getParameters(terms),
         posts = Posts.find(parameters.find, parameters.options),
@@ -79,7 +80,7 @@ Meteor.publish('postsListUsers', function(terms) {
 
 // Publish all users
 
-Meteor.publish('allUsers', function(filterBy, sortBy, limit) {
+Meteor.publish('telescopeAllUsers', function(filterBy, sortBy, limit) {
   if(canViewById(this.userId)){
     var parameters = getUsersParameters(filterBy, sortBy, limit);
     if (!isAdminById(this.userId)) // if user is not admin, filter out sensitive info
@@ -92,7 +93,7 @@ Meteor.publish('allUsers', function(filterBy, sortBy, limit) {
 // publish all users for admins to make autocomplete work
 // TODO: find a better way
 
-Meteor.publish('allUsersAdmin', function() {
+Meteor.publish('telescopeAllUsersAdmin', function() {
   if (isAdminById(this.userId)) {
     return Meteor.users.find();
   } else {
@@ -104,7 +105,7 @@ Meteor.publish('allUsersAdmin', function() {
 
 // Publish a single post
 
-Meteor.publish('singlePost', function(id) {
+Meteor.publish('telescopeSinglePost', function(id) {
   if(canViewById(this.userId)){
     return Posts.find(id);
   }
@@ -113,7 +114,7 @@ Meteor.publish('singlePost', function(id) {
 
 // Publish the post related to the current comment
 
-Meteor.publish('commentPost', function(commentId) {
+Meteor.publish('telescopeCommentPost', function(commentId) {
   if(canViewById(this.userId)){
     var comment = Comments.findOne(commentId);
     return Posts.find({_id: comment && comment.post});
@@ -123,7 +124,7 @@ Meteor.publish('commentPost', function(commentId) {
 
 // Publish a list of posts
 
-Meteor.publish('postsList', function(terms) {
+Meteor.publish('telescopePostsList', function(terms) {
   if(canViewById(this.userId)){
     var parameters = getParameters(terms),
         posts = Posts.find(parameters.find, parameters.options);
@@ -144,7 +145,7 @@ Meteor.publish('postsList', function(terms) {
 
 // Publish comments for a specific post
 
-Meteor.publish('postComments', function(postId) {
+Meteor.publish('telescopePostComments', function(postId) {
   if(canViewById(this.userId)){
     return Comments.find({post: postId});
   }
@@ -153,7 +154,7 @@ Meteor.publish('postComments', function(postId) {
 
 // Publish a single comment
 
-Meteor.publish('singleComment', function(commentId) {
+Meteor.publish('telescopeSingleComment', function(commentId) {
   if(canViewById(this.userId)){
     return Comments.find(commentId);
   }
@@ -162,7 +163,7 @@ Meteor.publish('singleComment', function(commentId) {
 
 // -------------------------------------------- Other -------------------------------------------- //
 
-Meteor.publish('settings', function() {
+Meteor.publish('telescopeSettings', function() {
   var options = {};
   if(!isAdminById(this.userId)){
     options = _.extend(options, {
@@ -175,7 +176,7 @@ Meteor.publish('settings', function() {
   return Settings.find({}, options);
 });
 
-Meteor.publish('notifications', function() {
+Meteor.publish('telescopeNotifications', function() {
   // only publish notifications belonging to the current user
   if(canViewById(this.userId)){
     return Notifications.find({userId:this.userId});
@@ -183,14 +184,14 @@ Meteor.publish('notifications', function() {
   return [];
 });
 
-Meteor.publish('categories', function() {
+Meteor.publish('telescopeCategories', function() {
   if(canViewById(this.userId)){
     return Categories.find();
   }
   return [];
 });
 
-Meteor.publish('searches', function(limit) {
+Meteor.publish('telescopeSearches', function(limit) {
   var limit = typeof limit === undefined ? 20 : limit; 
   if(isAdminById(this.userId)){
    return Searches.find({}, {limit: limit, sort: {timestamp: -1}});

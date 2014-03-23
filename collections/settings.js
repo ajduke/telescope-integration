@@ -1,4 +1,4 @@
-Settings = new Meteor.Collection('settings');
+Settings = new Meteor.Collection('telescopeSettings');
 
 Settings.allow({
   insert: isAdminById

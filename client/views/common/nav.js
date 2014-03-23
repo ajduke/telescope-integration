@@ -89,7 +89,9 @@ Template.telescope_nav.events({
   },
   'click .signout': function(e){
     e.preventDefault();
+    Router.go('/'+baseUrl)
     Meteor.logout();
+    throwError("You are successfully logged out, Login again to post.")
   },
   'click #mobile-menu': function(e){
     e.preventDefault();

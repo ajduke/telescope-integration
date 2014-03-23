@@ -2,7 +2,7 @@
 Session.set('initialLoad', true);
 Session.set('today', new Date());
 Session.set('view', 'top');
-Session.set('postsLimit', getSetting('postsPerPage', 10));
+Session.set('postsLimit', 10);
 Session.set('sessionId', Meteor.default_connection._lastSessionId);
 
 STATUS_PENDING=1;
@@ -16,10 +16,10 @@ STATUS_REJECTED=3;
 Deps.autorun(function() {
   // userId() can be changed before user(), because loading profile takes time
   if(Meteor.userId()) {
-    Meteor.subscribe('notifications');
+    Meteor.subscribe('telescopeNotifications');
     if(isAdmin(Meteor.user())){
       // Subscribe to all users for now to make user selection autocomplete work
-      Meteor.subscribe('allUsersAdmin');
+      Meteor.subscribe('telescopeAllUsersAdmin');
     }
   }else{
 //    Router.go('/forum/login');
