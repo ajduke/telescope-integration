@@ -4,7 +4,6 @@ Meteor.methods({
     if(isAdmin(Meteor.user())){
       Posts.find().forEach(function(post){
         if(post.categories){
-          console.log('Found categories for post "'+post.headline+'"');
           Posts.update(post._id,{$set:{userId:post.user_id}}, function(error){
             console.log(error);
           });

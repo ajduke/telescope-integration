@@ -26,7 +26,6 @@ Template.telescope_search.events({
         Session.set('searchQuery', val);
         $search.removeClass('empty');
         // if we're not already on the search page, go to it
-          console.log(getCurrentRoute())
         if(getCurrentRoute().indexOf('search') == -1){
             Router.go('/'+baseUrl+'/search');
         }

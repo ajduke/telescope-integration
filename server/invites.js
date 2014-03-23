@@ -22,7 +22,6 @@ Meteor.methods({
         invitedBy: currentUser._id,
         invitedByName: getDisplayName(currentUser)
       }});
-      console.log(a)
 
       createNotification({
         event: 'accountApproved', 

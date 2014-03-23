@@ -77,8 +77,7 @@ addToMailChimpList = function(user){
     if (! email)
       throw 'User must have an email address';
 
-    console.log('adding "'+email+'" to MailChimp list…');
-    
+
     var mailChimp = new MailChimpAPI(MAILCHIMP_API_KEY, { version : '1.3', secure : false });
     
     mailChimp.listSubscribe({

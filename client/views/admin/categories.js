@@ -1,7 +1,8 @@
 Template.telescope_categories.helpers({
   categories: function(){
-    return Categories.find({}, {sort: {name: 1}});
+    return Categories.find({}, {sort: {name: 1}}).fetch();
   }
+
 });
 
 Template.telescope_categories.events({

@@ -7,12 +7,6 @@ sendEmail = function(to, subject, text, html){
   var siteName = getSetting('title');
   var subject = '['+siteName+'] '+subject
 
-  console.log('sending email…');
-  console.log(from)
-  console.log(to)
-  console.log(subject)
-  console.log(text)
-  console.log(html)
 
   Email.send({
     from: from, 

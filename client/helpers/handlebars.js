@@ -53,7 +53,6 @@ Handlebars.registerHelper('isAdmin', function(showError) {
 Handlebars.registerHelper('canEdit', function(collectionName, item, action) {
   var action = (typeof action !== 'string') ? null : action;
   var collection = (typeof collectionName !== 'string') ? Posts : eval(collectionName);
-  console.log(item);
   // var itemId = (collectionName==="Posts") ? Session.get('selectedPostId') : Session.get('selectedCommentId');
   // var item=collection.findOne(itemId);
   return item && canEdit(Meteor.user(), item, action);
