@@ -15,8 +15,24 @@ Template.telescope_posts_list.helpers({
     var count = parseInt(Session.get('postsLimit')) + parseInt(getSetting('postsPerPage', 10));
     var categorySegment = Session.get('categorySlug') ? Session.get('categorySlug') + '/' : '';
     return '/'+baseUrl+'/' + Session.get('view') + '/' + categorySegment + count;
+  },
+  currentPage:function(){
+    return capitalise(Session.get('view'))
+  },
+  isCategoryPage: function(){
+    return Session.get('view')==='category'
+  },
+  getCategorySlug: function(){
+    return Session.get('categorySlug')
   }
+
+
+
 });
+
+var capitalise = function (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
 
 Template.telescope_posts_list.rendered = function(){
   var distanceFromTop = 0;

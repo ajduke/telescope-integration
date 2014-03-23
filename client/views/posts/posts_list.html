@@ -1,6 +1,18 @@
 <template name="telescope_posts_list">
 
+
   <div class="container list">
+    <div class="grid-block">
+      {{#if isCategoryPage}}
+      Showing posts tagged with <strong>
+      <a href="#" class="btn btn-default btn-xs category-{{slug}}" style="font-size: 12px;padding-top: 0px">
+        {{getCategorySlug}}</a>
+      </strong>
+      {{else}}
+      Showing <strong>{{currentPage}}</strong> Posts
+      {{/if}}
+    </div>
+
     {{#each posts}}
     {{> telescope_post_item}}
     {{/each}}
