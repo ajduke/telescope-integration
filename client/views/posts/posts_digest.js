@@ -7,9 +7,9 @@ Template.telescope_posts_digest.helpers({
     var today=moment(new Date());
     var diff=today.diff(currentDate, 'days');
     if(diff === 1)
-      return i18n.t("Today");
+      return "Today";
     if(diff === 2)
-      return i18n.t("Yesterday");
+      return "Yesterday";
     return currentDate.format("dddd, MMMM Do YYYY");
   },
   previousDateURL: function(){

@@ -9,7 +9,7 @@ Template.telescope_comment_edit.events({
     e.preventDefault();
 
     if(!Meteor.user())
-      throw i18n.t('You must be logged in.');
+      throw 'You must be logged in.';
 
     Comments.update(comment._id, {
       $set: {
@@ -25,7 +25,7 @@ Template.telescope_comment_edit.events({
 
     e.preventDefault();
     
-    if(confirm(i18n.t("Are you sure?"))){
+    if(confirm("Are you sure?")){
       Meteor.call('removeComment', comment._id);
       Router.go('/'+baseUrl+"/posts/"+comment.post)
       throwError("Your comment has been deleted.");

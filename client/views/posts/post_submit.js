@@ -40,7 +40,7 @@ Template.telescope_post_submit.events({
     $(e.target).addClass('disabled');
 
     if(!Meteor.user()){
-      throwError(i18n.t('You must be logged in.'));
+      throwError('You must be logged in.');
       return false;
     }
 

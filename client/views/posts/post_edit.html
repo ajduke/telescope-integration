@@ -11,32 +11,32 @@
           </div>
         <form class="form-horizontal">
           <div class="form-group">
-            <label class="col-sm-3 control-label ">{{i18n "Created"}}</label>
+            <label class="col-sm-3 control-label ">Created</label>
             <div class="col-sm-9"><p class="form-control-static">{{created}}</p></div>
           </div>
           <div class="form-group">
-            <label class="col-sm-3 control-label">{{i18n "Title"}}</label>
+            <label class="col-sm-3 control-label">Title</label>
             <div class="col-sm-9"><input id="title" class="form-control" type="text" value="{{headline}}" /></div>
           </div>
           <div class="form-group">
-            <label class="col-sm-3  control-label ">{{i18n "URL"}}</label>
+            <label class="col-sm-3  control-label ">URL</label>
             <div class="col-sm-9"><input id="url" class="form-control" type="text" value="{{url}}" /></div>
           </div>
           {{#if shorten}}
           <div class="form-group">
-            <label class="col-sm-3  control-label">{{i18n "Short URL"}}</label>
+            <label class="col-sm-3  control-label">Short URL</label>
             <div class="col-sm-9"><input id="short-url" class="form-control" type="text" value="{{shortUrl}}" /></div>
           </div>
           {{/if}}
           <div class="form-group">
-            <label class="col-sm-3 control-label ">{{i18n "Body"}}</label>
+            <label class="col-sm-3 control-label ">Body</label>
             <div class="col-sm-9" ><textarea rows="6" id="body" value=""  class="editor form-control" class="input-xlarge">{{body}}</textarea></div>
           </div>
 
           {{#if enableCategories}}
           {{#if categoriesEnabled}}
           <div class="form-group">
-            <label class="col-sm-3 control-label">{{i18n "Categories"}}</label>
+            <label class="col-sm-3 control-label">Categories</label>
             <div class="col-sm-9">
               {{#each categories}}
               <label class="checkbox-inline">
@@ -50,25 +50,25 @@
 
           {{#if isAdmin}}
           <div class="form-group">
-            <label class="col-sm-3 control-label">{{i18n "Inactive?"}}</label>
+            <label class="col-sm-3 control-label">Inactive?</label>
             <div class="col-sm-9">
               {{inactive}}
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-3 control-label">{{i18n "Sticky?"}}</label>
+            <label class="col-sm-3 control-label">Sticky?</label>
             <div class="col-sm-9">
               <input type="checkbox"  name="sticky" id="sticky" {{isSticky}} />
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-3 control-label">{{i18n "Status"}}</label>
+            <label class="col-sm-3 control-label">Status</label>
             <div class="col-sm-9">
               <label class="radio-inline">
-                <input id="status_pending" type="radio" value="1" name="status" {{hasStatusPending}} /> {{i18n "Pending"}}
+                <input id="status_pending" type="radio" value="1" name="status" {{hasStatusPending}} /> Pending
               </label>
               <label class="radio-inline">
-                <input id="status_approved" type="radio" value="2" name="status" {{hasStatusApproved}} /> {{i18n "Approved"}}
+                <input id="status_approved" type="radio" value="2" name="status" {{hasStatusApproved}} /> Approved
               </label>
             </div>
           </div>
@@ -76,11 +76,11 @@
           <div class="form-group">
             <span class="col-md-3"></span>
             <span class="col-md-3">
-              <input type="submit" class="form-control" value="{{i18n "Submit"}}" />
+              <input type="submit" class="form-control" value="Submit" />
             </span>
             <span class="col-md-3"></span>
             <span class="col-md-3">
-              <button class="btn btn-danger delete-link" href="{{deletedURL}}">{{i18n "Delete Post"}}</button>
+              <button class="btn btn-danger delete-link" href="{{deletedURL}}">Delete Post</button>
             </span>
 
 

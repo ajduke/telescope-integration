@@ -18,18 +18,18 @@
       <div class="collapse navbar-collapse nav-col" id="bs-example-navbar-collapse-1" >
         <ul class="nav navbar-nav navbar-left">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "View"}} <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">View <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a class="top" href="{{topURL}}">{{i18n "Top"}}</a></li>
-              <li><a class="new" href="{{newURL}}">{{i18n "New"}}</a></li>
-              <li><a class="best" href="{{bestURL}}">{{i18n "Best"}}</a></li>
-              <li><a class="digest" href="{{digestURL}}">{{i18n "Digest"}}</a></li>
+              <li><a class="top" href="{{topURL}}">Top</a></li>
+              <li><a class="new" href="{{newURL}}">New</a></li>
+              <li><a class="best" href="{{bestURL}}">Best</a></li>
+              <li><a class="digest" href="{{digestURL}}">Digest</a></li>
             </ul>
           </li>
           {{#if enableCategories}}
           {{#if hasCategories}}
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Categories"}}<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
             <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
               {{# each categories}}
               <li><a class="pending" href="{{categoryLink}}">{{name}}</a></li>
@@ -41,15 +41,15 @@
 
           {{#if isAdmin}}
           <li class="dropdown">
-            <a class="admin" href="#" class="dropdown-toggle" data-toggle="dropdown">{{i18n "Administration"}}<b
+            <a class="admin" href="#" class="dropdown-toggle" data-toggle="dropdown">Administration<b
               class="caret"></b></a>
             <ul role="menu" class="dropdown-menu" aria-labelledby="dLabel">
-              <li><a class="pending" href="{{pendingURL}}">{{i18n "Pending"}}</a></li>
-              <li><a class="users" href="{{allUsersURL}}">{{i18n "Users"}}</a></li>
+              <li><a class="pending" href="{{pendingURL}}">Pending</a></li>
+              <li><a class="users" href="{{allUsersURL}}">Users</a></li>
               {{#if enableCategories}}
-              <li><a class="categories" href="{{categoriesURL}}">{{i18n "Categories"}}</a></li>
+              <li><a class="categories" href="{{categoriesURL}}">Categories</a></li>
               {{/if}}
-              <li><a class="logs" href="{{logsURL}}">{{i18n "Logs"}}</a></li>
+              <li><a class="logs" href="{{logsURL}}">Logs</a></li>
             </ul>
           </li>
           {{/if}}

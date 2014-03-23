@@ -15,9 +15,9 @@
          <a class="comment-username" href="{{profileUrl}}">{{authorName}}</a>
          <span class="comment-time">{{ago}},</span>
             <span class="points">{{votes}} <span class="unit">points </span> |
-            <a href="{{commentLinkUrl}}" class="comment-permalink glyphicon glyphicon-link goto-comment">{{i18n "link"}}</a>
+            <a href="{{commentLinkUrl}}" class="comment-permalink glyphicon glyphicon-link goto-comment">link</a>
             {{#if can_edit}}
-              | <a class="edit-link" href="{{commentEditLinkUrl}}">{{i18n "Edit"}}</a>
+              | <a class="edit-link" href="{{commentEditLinkUrl}}">Edit</a>
             {{/if}}
             {{#if currentUser.isAdmin}}
               | <span>{{full_date}}</span>

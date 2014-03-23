@@ -17,13 +17,13 @@
           </p>
           <p>
           {{#if getGitHubName}}
-          <strong>{{i18n "GitHub"}}:</strong>
+          <strong>GitHub:</strong>
           <a href="http://github.com/{{getGitHubName}}">{{getGitHubName}}</a>
           {{/if}}
           </p>
           <p>
           {{#if site}}
-          <strong>{{i18n "Site"}}:</strong>
+          <strong>Site:</strong>
           <a href="{{profile.site}}">{{profile.site}}</a>
           {{/if}}
           </p>
@@ -33,14 +33,14 @@
           <p><b>Member Since:</b> {{createdAtFormatted}}</p>
           <p class="bg-primary">
             {{#if canEditProfile}}
-            <a class="btn btn-default pull-left" href="{{editURL}}">{{i18n "Edit profile"}}</a>
+            <a class="btn btn-default pull-left" href="{{editURL}}">Edit profile</a>
             {{/if}}
 
             {{#if canInvite}}
-            <a class="btn btn-default pull-right" href="#">{{i18n "Invite"}} ({{inviteCount}} {{i18n "left"}})</a>
+            <a class="btn btn-default pull-right" href="#">Invite ({{inviteCount}} left)</a>
             {{#if inviteCount}}
             {{else}}
-            <a class="btn btn-default pull-right disabled" href="#">{{i18n "Invite (none left)"}}</a>
+            <a class="btn btn-default pull-right disabled" href="#">Invite (none left)</a>
             {{/if}}
             {{/if}}
           </p>

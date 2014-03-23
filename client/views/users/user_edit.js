@@ -37,7 +37,7 @@ Template.telescope_user_edit.events({
 
     clearSeenErrors();
     if(!Meteor.user())
-      throwError(i18n.t('You must be logged in.'));
+      throwError('You must be logged in.');
 
     var $target=$(e.target);
     var name = $target.find('[name=name]').val();
@@ -74,7 +74,7 @@ Template.telescope_user_edit.events({
       if(error){
         throwError(error.reason);
       } else {
-        throwError(i18n.t('Profile updated'));
+        throwError('Profile updated');
       }
     });
   }
