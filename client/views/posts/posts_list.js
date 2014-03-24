@@ -24,6 +24,11 @@ Template.telescope_posts_list.helpers({
   },
   getCategorySlug: function(){
     return Session.get('categorySlug')
+  },isSearchPage: function(){
+    return Session.get('view')==='search'
+  },
+  searchQueryTerm : function(){
+    return Session.get('searchQuery')
   }
 
 

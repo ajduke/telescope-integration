@@ -9,7 +9,11 @@
         {{getCategorySlug}}</a>
       </strong>
       {{else}}
-      Showing <strong>{{currentPage}}</strong> Posts
+        {{#if isSearchPage}}
+         Showing search results for <strong>{{searchQueryTerm}}</strong>
+        {{else}}
+          Showing <strong>{{currentPage}}</strong> Posts
+        {{/if}}
       {{/if}}
     </div>
 
